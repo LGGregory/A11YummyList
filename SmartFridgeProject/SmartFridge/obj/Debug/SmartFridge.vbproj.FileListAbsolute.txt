@@ -1,0 +1,15 @@
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\bin\Debug\SmartFridge.exe.config
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\bin\Debug\SmartFridge.exe
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\bin\Debug\SmartFridge.pdb
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\bin\Debug\SmartFridge.xml
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.Resources.resources
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.SmartFridgeDisplay.resources
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.vbproj.GenerateResource.cache
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.exe
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.xml
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.pdb
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.SidePanel.resources
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.GroceryList.resources
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.ItemBar.resources
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.AddItemForm.resources
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.vbprojResolveAssemblyReference.cache
