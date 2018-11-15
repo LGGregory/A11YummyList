@@ -1,13 +1,13 @@
 ﻿Public Class SmartFridgeDisplay
-    Public ActiveList As GroceryListPanel
+    Public ActivePanel As GroceryListPanel
     Public ListOfLists As New List(Of GroceryListPanel)
 
     Private Sub SmartFridgeDisplay_Load(sender As Object, e As EventArgs) Handles Me.Load
-        ActiveList = GroceryListDefault
+        ActivePanel = GroceryListDefault
     End Sub
 
     Private Sub AddItemButton_Click(sender As Object, e As EventArgs) Handles AddItemButton.Click
-        Dim f As New AddItemForm(ActiveList)
+        Dim f As New AddItemForm(ActivePanel)
         f.Show()
     End Sub
 

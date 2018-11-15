@@ -40,7 +40,7 @@ Partial Class GroceryListPanel
         '
         Me.FlowPanel.Location = New System.Drawing.Point(0, 64)
         Me.FlowPanel.Name = "FlowPanel"
-        Me.FlowPanel.Size = New System.Drawing.Size(445, 571)
+        Me.FlowPanel.Size = New System.Drawing.Size(445, 493)
         Me.FlowPanel.TabIndex = 4
         '
         'GroceryListPanel

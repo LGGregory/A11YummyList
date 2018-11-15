@@ -20,6 +20,7 @@
         ' Add any initialization after the InitializeComponent() call.
 
         ParentList = AddList
+        Me.Text = "Add Item to " & ParentList.ListName
 
     End Sub
 

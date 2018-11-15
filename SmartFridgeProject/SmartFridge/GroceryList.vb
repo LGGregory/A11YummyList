@@ -3,6 +3,7 @@
 Public Class GroceryList
     Dim List As New List(Of ItemInfo)
     Dim ListInfo As String
+    Dim ListName As String
 
 
     Public Sub New()
@@ -27,6 +28,15 @@ Public Class GroceryList
         End Get
         Set(value As String)
             ListInfo = value
+        End Set
+    End Property
+
+    Public Property Name As String
+        Get
+            Return ListName
+        End Get
+        Set(value As String)
+            ListName = value
         End Set
     End Property
 

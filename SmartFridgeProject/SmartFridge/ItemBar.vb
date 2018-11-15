@@ -34,7 +34,7 @@
         Info.Name = "Deleted"
 
         UpdateInfo()
-        List.Items.Remove(Info)
+        List.RemoveItem(Info)
         List.FlowPanel.Controls.Remove(Me)
 
 
