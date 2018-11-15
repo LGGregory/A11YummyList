@@ -6,11 +6,6 @@
         ActivePanel = GroceryListDefault
     End Sub
 
-    Private Sub AddItemButton_Click(sender As Object, e As EventArgs) Handles AddItemButton.Click
-        Dim f As New AddItemForm(ActivePanel)
-        f.Show()
-    End Sub
-
     Public Sub DimPanel()
 
     End Sub

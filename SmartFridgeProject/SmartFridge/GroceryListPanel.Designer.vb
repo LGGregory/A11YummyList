@@ -24,6 +24,10 @@ Partial Class GroceryListPanel
     Private Sub InitializeComponent()
         Me.ListTitle = New System.Windows.Forms.Label()
         Me.FlowPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.DetailsButton = New System.Windows.Forms.Button()
+        Me.CancelChanges = New System.Windows.Forms.Button()
+        Me.ApplyChangesButton = New System.Windows.Forms.Button()
+        Me.AddItemButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'ListTitle
@@ -40,21 +44,65 @@ Partial Class GroceryListPanel
         '
         Me.FlowPanel.Location = New System.Drawing.Point(0, 64)
         Me.FlowPanel.Name = "FlowPanel"
-        Me.FlowPanel.Size = New System.Drawing.Size(445, 493)
+        Me.FlowPanel.Size = New System.Drawing.Size(465, 580)
         Me.FlowPanel.TabIndex = 4
+        '
+        'DetailsButton
+        '
+        Me.DetailsButton.Location = New System.Drawing.Point(15, 650)
+        Me.DetailsButton.Name = "DetailsButton"
+        Me.DetailsButton.Size = New System.Drawing.Size(75, 23)
+        Me.DetailsButton.TabIndex = 5
+        Me.DetailsButton.Text = "Details"
+        Me.DetailsButton.UseVisualStyleBackColor = True
+        '
+        'CancelChanges
+        '
+        Me.CancelChanges.Location = New System.Drawing.Point(135, 650)
+        Me.CancelChanges.Name = "CancelChanges"
+        Me.CancelChanges.Size = New System.Drawing.Size(75, 23)
+        Me.CancelChanges.TabIndex = 6
+        Me.CancelChanges.Text = "Revert"
+        Me.CancelChanges.UseVisualStyleBackColor = True
+        '
+        'ApplyChangesButton
+        '
+        Me.ApplyChangesButton.Location = New System.Drawing.Point(255, 650)
+        Me.ApplyChangesButton.Name = "ApplyChangesButton"
+        Me.ApplyChangesButton.Size = New System.Drawing.Size(75, 23)
+        Me.ApplyChangesButton.TabIndex = 7
+        Me.ApplyChangesButton.Text = "Update"
+        Me.ApplyChangesButton.UseVisualStyleBackColor = True
+        '
+        'AddItemButton
+        '
+        Me.AddItemButton.Location = New System.Drawing.Point(375, 650)
+        Me.AddItemButton.Name = "AddItemButton"
+        Me.AddItemButton.Size = New System.Drawing.Size(75, 23)
+        Me.AddItemButton.TabIndex = 8
+        Me.AddItemButton.Text = "Add Item"
+        Me.AddItemButton.UseVisualStyleBackColor = True
         '
         'GroceryListPanel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.AddItemButton)
+        Me.Controls.Add(Me.ApplyChangesButton)
+        Me.Controls.Add(Me.CancelChanges)
+        Me.Controls.Add(Me.DetailsButton)
         Me.Controls.Add(Me.FlowPanel)
         Me.Controls.Add(Me.ListTitle)
         Me.Name = "GroceryListPanel"
-        Me.Size = New System.Drawing.Size(445, 635)
+        Me.Size = New System.Drawing.Size(465, 710)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents ListTitle As Label
     Friend WithEvents FlowPanel As FlowLayoutPanel
+    Friend WithEvents DetailsButton As Button
+    Friend WithEvents CancelChanges As Button
+    Friend WithEvents ApplyChangesButton As Button
+    Friend WithEvents AddItemButton As Button
 End Class

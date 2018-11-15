@@ -43,7 +43,19 @@
 
     End Sub
 
+    Private Sub AddItemButton_Click(sender As Object, e As EventArgs) Handles AddItemButton.Click
+        Dim f As New AddItemForm(Me)
+        f.Show()
+    End Sub
 
+    Public Sub ListChanged()
+        ' TODO handles items added/ removed/ whatever
+        ' Enables Apply/Cancel Changes button
+    End Sub
 
+    Public Sub ApplyChanges()
+        ' TODO apply changes from current list to saved list
+
+    End Sub
 
 End Class
