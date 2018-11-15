@@ -4,14 +4,7 @@
     Public Items As GroceryList
     Public UpdatingList As GroceryList
 
-    Public Property ListName As String
-        Get
-            Return Items.Name
-        End Get
-        Set(value As String)
-            Items.Name = value
-        End Set
-    End Property
+
 
     Public Sub AddItem(ByVal info As ItemInfo)
         Items.AddItem(info)
@@ -26,6 +19,9 @@
 
     Private Sub GroceryList_Load(sender As Object, e As EventArgs) Handles Me.Load
         ' Sample Data
+        Items = New GroceryList()
+
+        Items.Name = "Default List"
         AddItem(New ItemInfo("Broccoli", 3, "Lbs"))
         AddItem(New ItemInfo("Milk", 4, "L"))
         AddItem(New ItemInfo("Ground Beef", 2, "Kg"))

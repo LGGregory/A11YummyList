@@ -37,7 +37,7 @@ Partial Class SmartFridgeDisplay
         '
         'GroceryListDefault
         '
-        Me.GroceryListDefault.ListName = Nothing
+
         Me.GroceryListDefault.Location = New System.Drawing.Point(114, 0)
         Me.GroceryListDefault.Name = "GroceryListDefault"
         Me.GroceryListDefault.Size = New System.Drawing.Size(465, 635)
