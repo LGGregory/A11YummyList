@@ -12,6 +12,5 @@ C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\D
 C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.ItemBar.resources
 C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.AddItemForm.resources
 C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.GroceryListPanel.resources
-C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.vbprojAssemblyReference.cache
-C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.vbproj.CoreCompileInputs.cache
 C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.AddList.resources
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.vbprojResolveAssemblyReference.cache
