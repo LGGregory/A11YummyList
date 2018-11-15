@@ -11,6 +11,14 @@
         f.Show()
     End Sub
 
+    Public Sub DimPanel()
+
+    End Sub
+
+    Public Sub UnDimPanel()
+
+    End Sub
+
     ' Adds a new Grocery List
     ' Possible TODO: Rewrite GroceryListPanel as a seperate class from the Panel
     ' That way porting it to Phone interpretation is easier

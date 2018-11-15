@@ -15,9 +15,7 @@
 
     Public Sub AddItem(ByVal info As ItemInfo)
         Items.Add(info)
-        FlowLayoutPanel1.Controls.Add(New ItemBar(info, Me))
-
-
+        FlowPanel.Controls.Add(New ItemBar(info, Me))
     End Sub
 
     Private Sub GroceryList_Load(sender As Object, e As EventArgs) Handles Me.Load

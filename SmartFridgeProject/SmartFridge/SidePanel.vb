@@ -1,4 +1,5 @@
 ﻿Public Class SidePanel
+    Dim Fridge As SmartFridgeDisplay = Nothing
     Dim ExpandedWidth As Integer = 320
     Dim ShrunkWidth As Integer = 70
 
@@ -6,6 +7,10 @@
 
 
     Private Sub SidePanel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'If Not Me.ParentForm Is Nothing Then
+        ' Fridge = ParentForm
+        ' End If
+
         BurgerExpand.Visible = False
         BurgerShrink_Click(Nothing, Nothing)
     End Sub
@@ -18,6 +23,10 @@
         Do While Width > ShrunkWidth
             Width = Width - 5
         Loop
+        If Not Fridge Is Nothing Then
+            Fridge.UnDimPanel()
+        End If
+
 
     End Sub
 
@@ -29,6 +38,13 @@
         Do While Width < ExpandedWidth
             Width = Width + 5
         Loop
+
+        If Not Fridge Is Nothing Then
+            Fridge.DimPanel()
+        End If
+
+
+
     End Sub
 
     ' Switch to Main List

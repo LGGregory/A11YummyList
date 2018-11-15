@@ -35,7 +35,7 @@
 
         UpdateInfo()
         List.Items.Remove(Info)
-        List.FlowLayoutPanel1.Controls.Remove(Me)
+        List.FlowPanel.Controls.Remove(Me)
 
 
     End Sub

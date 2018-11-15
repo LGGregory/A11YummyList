@@ -25,6 +25,7 @@
 
 
     Private Sub ItemName_TextChanged(sender As Object, e As EventArgs) Handles ItemName.TextChanged
+        ' TODO autocomplete?
 
     End Sub
 

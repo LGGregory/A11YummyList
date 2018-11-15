@@ -74,7 +74,7 @@ Partial Class AddItemForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(364, 195)
+        Me.ClientSize = New System.Drawing.Size(364, 191)
         Me.Controls.Add(Me.UnitList)
         Me.Controls.Add(Me.Quantity)
         Me.Controls.Add(Me.ItemName)

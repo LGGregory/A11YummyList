@@ -78,6 +78,12 @@
     <Compile Include="AddItem.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AddList.Designer.vb">
+      <DependentUpon>AddList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GroceryList.vb" />
     <Compile Include="ItemInfo.vb" />
     <Compile Include="GroceryListPanel.Designer.vb">
@@ -86,6 +92,7 @@
     <Compile Include="GroceryListPanel.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Recipe.vb" />
     <Compile Include="SidePanel.Designer.vb">
       <DependentUpon>SidePanel.vb</DependentUpon>
     </Compile>
@@ -124,6 +131,9 @@
   <ItemGroup>
     <EmbeddedResource Include="AddItem.resx">
       <DependentUpon>AddItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddList.resx">
+      <DependentUpon>AddList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GroceryListPanel.resx">
       <DependentUpon>GroceryListPanel.vb</DependentUpon>
