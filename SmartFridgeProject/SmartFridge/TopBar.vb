@@ -8,6 +8,8 @@
 
         ' Add any initialization after the InitializeComponent() call.
         Fridge = parent
+        AddToCurrentListButton.Button.Text = "A"
+        CopyToCurrentListButton.Button.Text = "C"
     End Sub
 
     Private Sub AddToCurrentListButton_Load(sender As Object, e As EventArgs) Handles AddToCurrentListButton.Load

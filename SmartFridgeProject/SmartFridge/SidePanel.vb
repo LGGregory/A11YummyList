@@ -22,6 +22,10 @@
 
     ' Expanding the SidePanel
     Private Sub BurgerExpand_Click(sender As Object, e As EventArgs) Handles BurgerExpand.Click
+        If Not Fridge Is Nothing Then
+            Fridge.DimPanel()
+        End If
+
         BurgerExpand.Visible = False
         BurgerShrink.Visible = True
         MenuPanel.Visible = True
@@ -29,24 +33,24 @@
             Width = Width + 5
         Loop
 
-        If Not Fridge Is Nothing Then
-            Fridge.DimPanel()
-        End If
+
 
 
 
     End Sub
 
     Private Sub BurgerShrinkAction()
+        If Not Fridge Is Nothing Then
+            Fridge.UnDimPanel()
+        End If
+
         BurgerShrink.Visible = False
         BurgerExpand.Visible = True
         MenuPanel.Visible = False
         Do While Width > ShrunkWidth
             Width = Width - 5
         Loop
-        If Not Fridge Is Nothing Then
-            Fridge.UnDimPanel()
-        End If
+
     End Sub
 
     Public Sub SetParent(parent As SmartFridgeDisplay)

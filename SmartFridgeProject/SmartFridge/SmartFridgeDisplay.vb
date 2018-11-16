@@ -68,11 +68,17 @@
     End Sub
 
     Public Sub DimPanel()
-
+        Me.BackColor = System.Drawing.Color.Silver
+        CurrentListPanel.BackColor = System.Drawing.Color.Silver
+        SavedListsPanel.BackColor = System.Drawing.Color.Silver
+        CurrentSavedListPanel.BackColor = System.Drawing.Color.Silver
     End Sub
 
     Public Sub UnDimPanel()
-
+        Me.BackColor = System.Drawing.Color.White
+        CurrentListPanel.BackColor = System.Drawing.Color.White
+        CurrentSavedListPanel.BackColor = System.Drawing.Color.White
+        SavedListsPanel.BackColor = System.Drawing.Color.White
     End Sub
 
     ' Adds a new Grocery List
