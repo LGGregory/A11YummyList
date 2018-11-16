@@ -1,6 +1,8 @@
 ﻿Imports SmartFridge
 
 Public Class ItemInfo
+    Implements ICloneable
+
     Public Name As String
     Public Quantity As Integer
     Public Unit As String = ""
@@ -41,9 +43,11 @@ Public Class ItemInfo
         Quantity = Quantity + value
     End Sub
 
+    Public Function Clone() As Object
+        Return New ItemInfo(Name, Quantity, Unit)
+    End Function
 
-
-
-
-
+    Private Function ICloneable_Clone() As Object Implements ICloneable.Clone
+        Throw New NotImplementedException()
+    End Function
 End Class

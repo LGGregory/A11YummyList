@@ -36,7 +36,7 @@
 
     Private Sub ConfirmAddButton_Click(sender As Object, e As EventArgs) Handles ConfirmAddButton.Click
         ParentList.AddItem(New ItemInfo(ItemName.Text, CInt(Quantity.Text), UnitList.SelectedItem))
-
+        ParentList.ListChanged()
         Close()
 
     End Sub

@@ -13,7 +13,6 @@ C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\D
 C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.AddItemForm.resources
 C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.GroceryListPanel.resources
 C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.AddList.resources
-C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.vbprojResolveAssemblyReference.cache
 C:\Users\Ridge\Documents\GitHub\A11YummyList\SmartFridgeProject\SmartFridge\bin\Debug\SmartFridge.exe.config
 C:\Users\Ridge\Documents\GitHub\A11YummyList\SmartFridgeProject\SmartFridge\bin\Debug\SmartFridge.exe
 C:\Users\Ridge\Documents\GitHub\A11YummyList\SmartFridgeProject\SmartFridge\bin\Debug\SmartFridge.pdb
@@ -33,3 +32,7 @@ C:\Users\Ridge\Documents\GitHub\A11YummyList\SmartFridgeProject\SmartFridge\obj\
 C:\Users\Ridge\Documents\GitHub\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.pdb
 C:\Users\Ridge\Documents\GitHub\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.ListOfListsPanel.resources
 C:\Users\Ridge\Documents\GitHub\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.ListBar.resources
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.vbprojAssemblyReference.cache
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.ListBar.resources
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.ListOfListsPanel.resources
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.vbproj.CoreCompileInputs.cache

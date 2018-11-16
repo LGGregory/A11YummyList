@@ -36,6 +36,7 @@
         UpdateInfo()
         List.RemoveItem(Info)
         List.FlowPanel.Controls.Remove(Me)
+        List.ListChanged()
 
 
     End Sub
@@ -44,11 +45,13 @@
         ItemName.Text = Info.Name
         ItemQuantity.Text = Info.Quantity
         ItemUnit.Text = Info.Unit
+        List.ListChanged()
     End Sub
 
     Private Sub UpQuantityButton_Click(sender As Object, e As EventArgs) Handles UpQuantityButton.Click
         Info.ModifyQuantity(1)
         UpdateInfo()
+
     End Sub
 
     Private Sub DownQuantityButton_Click(sender As Object, e As EventArgs) Handles DownQuantityButton.Click

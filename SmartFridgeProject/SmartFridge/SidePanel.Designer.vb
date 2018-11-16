@@ -93,9 +93,9 @@ Partial Class SidePanel
         Me.SavedListButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SavedListButton.Location = New System.Drawing.Point(3, 39)
         Me.SavedListButton.Name = "SavedListButton"
-        Me.SavedListButton.Size = New System.Drawing.Size(179, 39)
+        Me.SavedListButton.Size = New System.Drawing.Size(197, 39)
         Me.SavedListButton.TabIndex = 1
-        Me.SavedListButton.Text = "Saved List"
+        Me.SavedListButton.Text = "Saved Lists"
         '
         'RecipesButton
         '

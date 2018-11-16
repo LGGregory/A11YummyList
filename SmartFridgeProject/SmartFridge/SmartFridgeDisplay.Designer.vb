@@ -46,8 +46,8 @@ Partial Class SmartFridgeDisplay
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(579, 710)
-        Me.Controls.Add(Me.GroceryListDefault)
         Me.Controls.Add(Me.SidePanel1)
+        Me.Controls.Add(Me.GroceryListDefault)
         Me.Name = "SmartFridgeDisplay"
         Me.Text = "Form1"
         Me.ResumeLayout(False)

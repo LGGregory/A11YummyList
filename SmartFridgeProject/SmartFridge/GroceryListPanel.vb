@@ -22,8 +22,8 @@
         Current = New GroceryList
 
         Dim ItemL As New GroceryList
-        ItemL.Text = "This is the default list"
         ItemL.Name = "Default List"
+        ItemL.Text = "This is the default list"
         ItemL.AddItem(New ItemInfo("Broccoli", 3, "Lbs"))
         ItemL.AddItem(New ItemInfo("Milk", 4, "L"))
         ItemL.AddItem(New ItemInfo("Ground Beef", 2, "Kg"))
@@ -35,26 +35,19 @@
         UpdateList(list)
     End Sub
 
-
-
     Public Sub UpdateList(list As GroceryList)
 
-        '       FlowPanel.SuspendLayout()
-        For Each Control As Control In FlowPanel.Controls
-            FlowPanel.Controls.Remove(Control)
-        Next
-        '        FlowPanel.ResumeLayout()
-
-
+        FlowPanel.Controls.Clear()
         Current.Name = list.Name
         Current.Text = list.Text
         Current.GroceryList = New List(Of ItemInfo)
 
-        For Each toAdd In list.GroceryList
-            Current.GroceryList.Add(toAdd)
-            FlowPanel.Controls.Add(New ItemBar(toAdd, Me))
+        For Each oldItem In list.GroceryList
+            Dim newItem As ItemInfo = oldItem.Clone()
+            AddItem(newItem)
         Next
-
+        CancelChanges.Hide()
+        ApplyChangesButton.Hide()
     End Sub
 
     Private Sub AddItemButton_Click(sender As Object, e As EventArgs) Handles AddItemButton.Click
@@ -65,11 +58,13 @@
     Public Sub ListChanged()
         ' TODO handles items added/ removed/ whatever
         ' Enables Apply/Cancel Changes button
+        CancelChanges.Show()
+        ApplyChangesButton.Show()
+
     End Sub
 
     Public Sub ApplyChanges()
         ' TODO apply changes from current list to saved list
-
     End Sub
 
 
@@ -80,5 +75,12 @@
 
     Private Sub CancelChanges_Click(sender As Object, e As EventArgs) Handles CancelChanges.Click
         UpdateList(UpdatingList)
+        DetailsBox.Text = UpdatingList.GroceryList.Count & " " & FlowPanel.Controls.Count
+
+
+    End Sub
+
+    Private Sub ApplyChangesButton_Click(sender As Object, e As EventArgs) Handles ApplyChangesButton.Click
+
     End Sub
 End Class
