@@ -34,4 +34,27 @@ C:\Users\Ridge\Documents\GitHub\A11YummyList\SmartFridgeProject\SmartFridge\obj\
 C:\Users\Ridge\Documents\GitHub\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.ListBar.resources
 C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.ListBar.resources
 C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.ListOfListsPanel.resources
+<<<<<<< HEAD
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.vbproj.CoreCompileInputs.cache
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.vbprojAssemblyReference.cache
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.AddItemForm.resources
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.AddList.resources
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.GroceryListPanel.resources
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.ListBar.resources
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.ListOfListsPanel.resources
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.Resources.resources
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.SidePanel.resources
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.SmartFridgeDisplay.resources
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.ItemBar.resources
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.vbproj.GenerateResource.cache
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.vbproj.CoreCompileInputs.cache
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.exe
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.xml
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.pdb
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\bin\Debug\SmartFridge.exe.config
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\bin\Debug\SmartFridge.exe
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\bin\Debug\SmartFridge.pdb
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\bin\Debug\SmartFridge.xml
+=======
 C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.vbprojResolveAssemblyReference.cache
+>>>>>>> fbdee5b7827af814e76b77e1610135459b1bd4ca

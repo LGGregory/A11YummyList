@@ -30,10 +30,10 @@ Partial Class ListOfListsPanel
         'PanelTitle
         '
         Me.PanelTitle.AutoSize = True
-        Me.PanelTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PanelTitle.Location = New System.Drawing.Point(133, 22)
+        Me.PanelTitle.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PanelTitle.Location = New System.Drawing.Point(149, 0)
         Me.PanelTitle.Name = "PanelTitle"
-        Me.PanelTitle.Size = New System.Drawing.Size(124, 25)
+        Me.PanelTitle.Size = New System.Drawing.Size(167, 32)
         Me.PanelTitle.TabIndex = 4
         Me.PanelTitle.Text = "Saved Lists"
         '
@@ -57,6 +57,7 @@ Partial Class ListOfListsPanel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.Controls.Add(Me.AddListButton)
         Me.Controls.Add(Me.FlowPanel)
         Me.Controls.Add(Me.PanelTitle)
