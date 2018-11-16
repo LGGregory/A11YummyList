@@ -1,9 +1,12 @@
 ﻿Public Class SmartFridgeDisplay
-    Public ActivePanel As GroceryListPanel
+    Public CurrentListPanel As GroceryListPanel
+    Public SavedListsPanel As ListOfListsPanel
     Public ListOfLists As New List(Of GroceryListPanel)
 
     Private Sub SmartFridgeDisplay_Load(sender As Object, e As EventArgs) Handles Me.Load
-        ActivePanel = GroceryListDefault
+        CurrentListPanel = GroceryListDefault
+
+
     End Sub
 
     Public Sub DimPanel()
@@ -26,6 +29,6 @@
     End Sub
 
     Private Sub SidePanel1_Load(sender As Object, e As EventArgs) Handles SidePanel1.Load
-
+        SidePanel1.SetParent(Me)
     End Sub
 End Class

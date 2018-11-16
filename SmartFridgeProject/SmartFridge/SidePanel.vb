@@ -7,9 +7,7 @@
 
 
     Private Sub SidePanel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'If Not Me.ParentForm Is Nothing Then
-        ' Fridge = ParentForm
-        ' End If
+        ' Need to load parent in here somehow
 
         BurgerExpand.Visible = False
         BurgerShrink_Click(Nothing, Nothing)
@@ -45,6 +43,10 @@
 
 
 
+    End Sub
+
+    Public Sub SetParent(parent As SmartFridgeDisplay)
+        Fridge = parent
     End Sub
 
     ' Switch to Main List

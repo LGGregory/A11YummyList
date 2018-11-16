@@ -2,3 +2,9 @@
 *.exe
 *.cache
 *.lock
+*.vbproj
+*.ide-wal
+SmartFridgeProject/.vs/SmartFridgeProject/v15/.suo
+*.ide-shm
+*.ide-wal
+SmartFridgeProject/.vs/SmartFridgeProject/v15/.suo
