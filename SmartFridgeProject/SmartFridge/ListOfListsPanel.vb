@@ -23,6 +23,11 @@
         FlowPanel.Controls.Remove(bar)
     End Sub
 
+    Public Sub addNewList(name As String)
+        Fridge.ListOfLists.Add(New GroceryListPanel(name, "A New List"))
+        FlowPanel.Controls.Add(New ListBar(Fridge.ListOfLists.Last, Me))
+    End Sub
+
     Public Sub setCurrentListPanel(panel As GroceryListPanel)
         Fridge.setCurrentListPanel(panel)
     End Sub

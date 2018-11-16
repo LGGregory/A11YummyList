@@ -28,7 +28,8 @@
     End Sub
 
     Private Sub ConfirmAddButton_Click(sender As Object, e As EventArgs) Handles ConfirmAddButton.Click
-
+        ParentList.addNewList(ItemName.Text)
+        Close()
     End Sub
 
     Private Sub ItemName_TextChanged(sender As Object, e As EventArgs) Handles ItemName.TextChanged
