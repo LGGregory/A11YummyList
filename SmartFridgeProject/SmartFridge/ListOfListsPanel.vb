@@ -28,8 +28,8 @@
         FlowPanel.Controls.Add(New ListBar(Fridge.ListOfLists.Last, Me))
     End Sub
 
-    Public Sub setCurrentListPanel(panel As GroceryListPanel)
-        Fridge.setCurrentListPanel(panel)
+    Public Sub setCurrentSavedListPanel(panel As GroceryListPanel)
+        Fridge.setCurrentSavedListPanel(panel)
     End Sub
 
     Private Sub ListOfListsPanel_Load(sender As Object, e As EventArgs) Handles Me.Load

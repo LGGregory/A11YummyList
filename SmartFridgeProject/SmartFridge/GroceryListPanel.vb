@@ -22,6 +22,8 @@
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
+        ListTitle.Text = name
+
         Current = New GroceryList
 
         Dim ItemL As New GroceryList

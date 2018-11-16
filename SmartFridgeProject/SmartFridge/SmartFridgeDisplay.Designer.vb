@@ -27,7 +27,7 @@ Partial Class SmartFridgeDisplay
         '
         'SidePanel1
         '
-        Me.SidePanel1.BackColor = System.Drawing.Color.DarkGreen
+        Me.SidePanel1.BackColor = System.Drawing.Color.Silver
         Me.SidePanel1.Location = New System.Drawing.Point(0, 0)
         Me.SidePanel1.Name = "SidePanel1"
         Me.SidePanel1.Size = New System.Drawing.Size(70, 710)
@@ -37,6 +37,7 @@ Partial Class SmartFridgeDisplay
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(579, 710)
         Me.Controls.Add(Me.SidePanel1)
         Me.Name = "SmartFridgeDisplay"

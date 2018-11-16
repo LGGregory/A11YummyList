@@ -1,6 +1,6 @@
 ﻿Public Class SidePanel
     Dim Fridge As SmartFridgeDisplay = Nothing
-    Dim ExpandedWidth As Integer = 320
+    Dim ExpandedWidth As Integer = 380
     Dim ShrunkWidth As Integer = 70
 
     Dim ExpandedBoolean As Boolean = True

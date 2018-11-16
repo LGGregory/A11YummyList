@@ -34,10 +34,10 @@ Partial Class GroceryListPanel
         'ListTitle
         '
         Me.ListTitle.AutoSize = True
-        Me.ListTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListTitle.Location = New System.Drawing.Point(133, 22)
+        Me.ListTitle.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ListTitle.Location = New System.Drawing.Point(78, 13)
         Me.ListTitle.Name = "ListTitle"
-        Me.ListTitle.Size = New System.Drawing.Size(220, 25)
+        Me.ListTitle.Size = New System.Drawing.Size(308, 32)
         Me.ListTitle.TabIndex = 3
         Me.ListTitle.Text = "Current Shopping List"
         '
@@ -96,6 +96,7 @@ Partial Class GroceryListPanel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.Controls.Add(Me.DetailsBox)
         Me.Controls.Add(Me.AddItemButton)
         Me.Controls.Add(Me.ApplyChangesButton)

@@ -14,20 +14,19 @@
 
         For Each panel As GroceryListPanel In ListOfLists
             Me.Controls.Add(panel)
-            panel.Left = 92
-            panel.Top = 20
+            panel.Location = New Point(92, 40)
+            panel.Size = New Point(465, 670)
             panel.Hide()
         Next
+        CurrentSavedListPanel = ListOfLists.First()
 
         CurrentListPanel = New GroceryListPanel("Current List", "Your Current List")
         Me.Controls.Add(CurrentListPanel)
-        CurrentListPanel.Left = 92
-        CurrentListPanel.Top = 0
+        CurrentListPanel.Location = New Point(92, 0)
         CurrentListPanel.Show()
         SavedListsPanel = New ListOfListsPanel(Me)
         Me.Controls.Add(SavedListsPanel)
-        SavedListsPanel.Left = 92
-        SavedListsPanel.Top = 0
+        SavedListsPanel.Location = New Point(92, 0)
         SavedListsPanel.Hide()
 
 
@@ -36,11 +35,13 @@
     End Sub
 
     Public Sub showSavedListsPanel()
+        CurrentSavedListPanel.Hide()
         CurrentListPanel.Hide()
         SavedListsPanel.Show()
     End Sub
 
     Public Sub showCurrentListPanel()
+        CurrentSavedListPanel.Hide()
         SavedListsPanel.Hide()
         CurrentListPanel.Show()
     End Sub

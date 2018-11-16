@@ -42,6 +42,6 @@
     End Sub
 
     Private Sub ItemName_Click(sender As Object, e As EventArgs) Handles ItemName.Click
-        Panel.setCurrentListPanel(List)
+        Panel.setCurrentSavedListPanel(List)
     End Sub
 End Class
