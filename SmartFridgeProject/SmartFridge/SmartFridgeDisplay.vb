@@ -3,21 +3,20 @@
     Public SavedListsPanel As ListOfListsPanel
     Public CurrentSavedListPanel As GroceryListPanel
     Public ListOfLists As New List(Of GroceryListPanel)
+    Public TopBar As TopBar
 
     Private Sub SmartFridgeDisplay_Load(sender As Object, e As EventArgs) Handles Me.Load
-        ListOfLists.Add(New GroceryListPanel("Sample List 1", "A Sample List"))
-        ListOfLists.Add(New GroceryListPanel("Sample List 2", "A Sample List"))
-        ListOfLists.Add(New GroceryListPanel("Sample List 3", "A Sample List"))
-        ListOfLists.Add(New GroceryListPanel("Sample List 4", "A Sample List"))
-        ListOfLists.Add(New GroceryListPanel("Sample List 5", "A Sample List"))
 
+        addGroceryList("Sample List 1", "A Sample List")
+        addGroceryList("Sample List 2", "A Sample List")
+        addGroceryList("Sample List 3", "A Sample List")
+        addGroceryList("Sample List 4", "A Sample List")
 
-        For Each panel As GroceryListPanel In ListOfLists
-            Me.Controls.Add(panel)
-            panel.Location = New Point(92, 40)
-            panel.Size = New Point(465, 670)
-            panel.Hide()
-        Next
+        TopBar = New TopBar(Me)
+        Me.Controls.Add(TopBar)
+        TopBar.Location = New Point(5, 0)
+        TopBar.Hide()
+
         CurrentSavedListPanel = ListOfLists.First()
 
         CurrentListPanel = New GroceryListPanel("Current List", "Your Current List")
@@ -34,21 +33,34 @@
 
     End Sub
 
+    Public Sub addGroceryList(name As String, about As String)
+        Dim NewList As GroceryListPanel
+        NewList = New GroceryListPanel(name, about)
+        Me.Controls.Add(NewList)
+        NewList.Location = New Point(92, 40)
+        NewList.Size = New Point(465, 670)
+        NewList.Hide()
+        ListOfLists.Add(NewList)
+    End Sub
+
     Public Sub showSavedListsPanel()
         CurrentSavedListPanel.Hide()
         CurrentListPanel.Hide()
         SavedListsPanel.Show()
+        TopBar.Hide()
     End Sub
 
     Public Sub showCurrentListPanel()
         CurrentSavedListPanel.Hide()
         SavedListsPanel.Hide()
+        TopBar.Hide()
         CurrentListPanel.Show()
     End Sub
 
     Public Sub setCurrentSavedListPanel(panel As GroceryListPanel)
         CurrentListPanel.Hide()
         SavedListsPanel.Hide()
+        TopBar.Show()
         CurrentSavedListPanel.Hide()
         CurrentSavedListPanel = panel
         CurrentSavedListPanel.Show()

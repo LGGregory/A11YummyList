@@ -139,6 +139,18 @@
     <Compile Include="ListOfListsPanel.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="TopBar.Designer.vb">
+      <DependentUpon>TopBar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TopBar.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TopBarButton.Designer.vb">
+      <DependentUpon>TopBarButton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TopBarButton.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControl1.Designer.vb">
       <DependentUpon>UserControl1.vb</DependentUpon>
     </Compile>
@@ -176,6 +188,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ItemBar.resx">
       <DependentUpon>ItemBar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TopBar.resx">
+      <DependentUpon>TopBar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TopBarButton.resx">
+      <DependentUpon>TopBarButton.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
