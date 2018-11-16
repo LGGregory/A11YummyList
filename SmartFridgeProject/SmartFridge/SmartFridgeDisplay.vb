@@ -1,6 +1,7 @@
 ﻿Public Class SmartFridgeDisplay
     Public CurrentListPanel As GroceryListPanel
     Public SavedListsPanel As ListOfListsPanel
+    Public CurrentSavedListPanel As GroceryListPanel
     Public ListOfLists As New List(Of GroceryListPanel)
 
     Private Sub SmartFridgeDisplay_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -10,14 +11,18 @@
         ListOfLists.Add(New GroceryListPanel("Sample List 4", "A Sample List"))
         ListOfLists.Add(New GroceryListPanel("Sample List 5", "A Sample List"))
 
+
         For Each panel As GroceryListPanel In ListOfLists
             Me.Controls.Add(panel)
             panel.Left = 92
-            panel.Top = 0
+            panel.Top = 20
             panel.Hide()
         Next
 
-        CurrentListPanel = ListOfLists.ElementAt(0)
+        CurrentListPanel = New GroceryListPanel("Current List", "Your Current List")
+        Me.Controls.Add(CurrentListPanel)
+        CurrentListPanel.Left = 92
+        CurrentListPanel.Top = 0
         CurrentListPanel.Show()
         SavedListsPanel = New ListOfListsPanel(Me)
         Me.Controls.Add(SavedListsPanel)
@@ -40,10 +45,12 @@
         CurrentListPanel.Show()
     End Sub
 
-    Public Sub setCurrentListPanel(panel As GroceryListPanel)
+    Public Sub setCurrentSavedListPanel(panel As GroceryListPanel)
         CurrentListPanel.Hide()
-        CurrentListPanel = panel
-        CurrentListPanel.Show()
+        SavedListsPanel.Hide()
+        CurrentSavedListPanel.Hide()
+        CurrentSavedListPanel = panel
+        CurrentSavedListPanel.Show()
 
     End Sub
 
