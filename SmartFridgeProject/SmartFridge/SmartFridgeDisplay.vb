@@ -20,4 +20,5 @@
     Public Sub AddList(ByRef List As GroceryListPanel)
         ' TODO
     End Sub
+
 End Class

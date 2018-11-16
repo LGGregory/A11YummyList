@@ -1,45 +1,59 @@
 ﻿Public Class GroceryListPanel
     Private LName As String
     Private ItemCount As Integer
-    Public Items As GroceryList
+    Public Current As GroceryList
     Public UpdatingList As GroceryList
 
 
 
     Public Sub AddItem(ByVal info As ItemInfo)
-        Items.AddItem(info)
+        Current.AddItem(info)
         FlowPanel.Controls.Add(New ItemBar(info, Me))
     End Sub
 
     Public Sub RemoveItem(ByRef info As ItemInfo)
-        Items.GroceryList.Remove(info)
+        Current.GroceryList.Remove(info)
 
     End Sub
 
 
     Private Sub GroceryList_Load(sender As Object, e As EventArgs) Handles Me.Load
         ' Sample Data
-        Items = New GroceryList()
+        Current = New GroceryList
 
-        Items.Name = "Default List"
-        AddItem(New ItemInfo("Broccoli", 3, "Lbs"))
-        AddItem(New ItemInfo("Milk", 4, "L"))
-        AddItem(New ItemInfo("Ground Beef", 2, "Kg"))
+        Dim ItemL As New GroceryList
+        ItemL.Text = "This is the default list"
+        ItemL.Name = "Default List"
+        ItemL.AddItem(New ItemInfo("Broccoli", 3, "Lbs"))
+        ItemL.AddItem(New ItemInfo("Milk", 4, "L"))
+        ItemL.AddItem(New ItemInfo("Ground Beef", 2, "Kg"))
+        LoadList(ItemL)
     End Sub
 
-    Public Sub UpdateList(ByRef list As GroceryList)
+    Public Sub LoadList(list As GroceryList)
         UpdatingList = list
-        FlowPanel.SuspendLayout()
+        UpdateList(list)
+    End Sub
 
+
+
+    Public Sub UpdateList(list As GroceryList)
+
+        '       FlowPanel.SuspendLayout()
         For Each Control As Control In FlowPanel.Controls
             FlowPanel.Controls.Remove(Control)
         Next
-        For Each Item As ItemInfo In list.GroceryList
-            AddItem(Item)
+        '        FlowPanel.ResumeLayout()
+
+
+        Current.Name = list.Name
+        Current.Text = list.Text
+        Current.GroceryList = New List(Of ItemInfo)
+
+        For Each toAdd In list.GroceryList
+            Current.GroceryList.Add(toAdd)
+            FlowPanel.Controls.Add(New ItemBar(toAdd, Me))
         Next
-
-        FlowPanel.ResumeLayout()
-
 
     End Sub
 
@@ -58,4 +72,13 @@
 
     End Sub
 
+
+
+    Private Sub DetailsBox_TextChanged(sender As Object, e As EventArgs) Handles DetailsBox.TextChanged
+        ListChanged()
+    End Sub
+
+    Private Sub CancelChanges_Click(sender As Object, e As EventArgs) Handles CancelChanges.Click
+        UpdateList(UpdatingList)
+    End Sub
 End Class

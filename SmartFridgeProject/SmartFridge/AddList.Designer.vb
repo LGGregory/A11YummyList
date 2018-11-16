@@ -29,14 +29,14 @@ Partial Class AddList
         '
         'ItemName
         '
-        Me.ItemName.Location = New System.Drawing.Point(28, 37)
+        Me.ItemName.Location = New System.Drawing.Point(26, 33)
         Me.ItemName.Name = "ItemName"
         Me.ItemName.Size = New System.Drawing.Size(314, 20)
         Me.ItemName.TabIndex = 3
         '
         'CancelAddButton
         '
-        Me.CancelAddButton.Location = New System.Drawing.Point(28, 156)
+        Me.CancelAddButton.Location = New System.Drawing.Point(26, 145)
         Me.CancelAddButton.Name = "CancelAddButton"
         Me.CancelAddButton.Size = New System.Drawing.Size(75, 23)
         Me.CancelAddButton.TabIndex = 5
@@ -45,7 +45,7 @@ Partial Class AddList
         '
         'ConfirmAddButton
         '
-        Me.ConfirmAddButton.Location = New System.Drawing.Point(267, 156)
+        Me.ConfirmAddButton.Location = New System.Drawing.Point(265, 145)
         Me.ConfirmAddButton.Name = "ConfirmAddButton"
         Me.ConfirmAddButton.Size = New System.Drawing.Size(75, 23)
         Me.ConfirmAddButton.TabIndex = 4

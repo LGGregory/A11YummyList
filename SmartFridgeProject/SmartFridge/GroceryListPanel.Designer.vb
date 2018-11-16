@@ -28,6 +28,7 @@ Partial Class GroceryListPanel
         Me.CancelChanges = New System.Windows.Forms.Button()
         Me.ApplyChangesButton = New System.Windows.Forms.Button()
         Me.AddItemButton = New System.Windows.Forms.Button()
+        Me.DetailsBox = New System.Windows.Forms.RichTextBox()
         Me.SuspendLayout()
         '
         'ListTitle
@@ -44,7 +45,7 @@ Partial Class GroceryListPanel
         '
         Me.FlowPanel.Location = New System.Drawing.Point(0, 64)
         Me.FlowPanel.Name = "FlowPanel"
-        Me.FlowPanel.Size = New System.Drawing.Size(465, 580)
+        Me.FlowPanel.Size = New System.Drawing.Size(465, 391)
         Me.FlowPanel.TabIndex = 4
         '
         'DetailsButton
@@ -83,10 +84,19 @@ Partial Class GroceryListPanel
         Me.AddItemButton.Text = "Add Item"
         Me.AddItemButton.UseVisualStyleBackColor = True
         '
+        'DetailsBox
+        '
+        Me.DetailsBox.Location = New System.Drawing.Point(15, 461)
+        Me.DetailsBox.Name = "DetailsBox"
+        Me.DetailsBox.Size = New System.Drawing.Size(435, 183)
+        Me.DetailsBox.TabIndex = 9
+        Me.DetailsBox.Text = ""
+        '
         'GroceryListPanel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.DetailsBox)
         Me.Controls.Add(Me.AddItemButton)
         Me.Controls.Add(Me.ApplyChangesButton)
         Me.Controls.Add(Me.CancelChanges)
@@ -105,4 +115,5 @@ Partial Class GroceryListPanel
     Friend WithEvents CancelChanges As Button
     Friend WithEvents ApplyChangesButton As Button
     Friend WithEvents AddItemButton As Button
+    Friend WithEvents DetailsBox As RichTextBox
 End Class
