@@ -15,16 +15,8 @@
 
     ' Shrinking the SidePanel
     Private Sub BurgerShrink_Click(sender As Object, e As EventArgs) Handles BurgerShrink.Click
-        BurgerShrink.Visible = False
-        BurgerExpand.Visible = True
-        MenuPanel.Visible = False
-        Do While Width > ShrunkWidth
-            Width = Width - 5
-        Loop
-        If Not Fridge Is Nothing Then
-            Fridge.UnDimPanel()
-        End If
 
+        BurgerShrinkAction()
 
     End Sub
 
@@ -45,18 +37,33 @@
 
     End Sub
 
+    Private Sub BurgerShrinkAction()
+        BurgerShrink.Visible = False
+        BurgerExpand.Visible = True
+        MenuPanel.Visible = False
+        Do While Width > ShrunkWidth
+            Width = Width - 5
+        Loop
+        If Not Fridge Is Nothing Then
+            Fridge.UnDimPanel()
+        End If
+    End Sub
+
     Public Sub SetParent(parent As SmartFridgeDisplay)
         Fridge = parent
     End Sub
 
     ' Switch to Main List
     Private Sub CurrentListButton_Click(sender As Object, e As EventArgs) Handles CurrentListButton.Click
-        'TODO
+        Fridge.showCurrentListPanel()
+        BurgerShrinkAction()
     End Sub
 
     ' Switch to List of Recurring (Saved) List
     Private Sub SavedListButton_Click(sender As Object, e As EventArgs) Handles SavedListButton.Click
-        'TODO
+        Fridge.showSavedListsPanel()
+        BurgerShrinkAction()
+
     End Sub
 
     ' Switch to Recipe Display
