@@ -19,4 +19,8 @@
     Private Sub CopyToCurrentListButton_Load(sender As Object, e As EventArgs) Handles CopyToCurrentListButton.Load
 
     End Sub
+
+    Private Sub CopyToCurrentListButton_Click(sender As Object, e As EventArgs) Handles CopyToCurrentListButton.Click
+        Fridge.CopyToCurrentList()
+    End Sub
 End Class

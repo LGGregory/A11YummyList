@@ -16,6 +16,19 @@
 
     End Sub
 
+    Public Sub New(from As GroceryListPanel)
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        ListTitle.Text = from.ListTitle.Text
+
+        Current = New GroceryList(from.Current)
+        LoadList(Current)
+
+    End Sub
+
     Public Sub New(name As String, text As String)
 
         ' This call is required by the designer.

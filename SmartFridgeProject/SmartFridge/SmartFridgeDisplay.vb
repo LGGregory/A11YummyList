@@ -12,11 +12,6 @@
         addGroceryList("Sample List 3", "A Sample List")
         addGroceryList("Sample List 4", "A Sample List")
 
-        TopBar = New TopBar(Me)
-        Me.Controls.Add(TopBar)
-        TopBar.Location = New Point(5, 0)
-        TopBar.Hide()
-
         CurrentSavedListPanel = ListOfLists.First()
 
         CurrentListPanel = New GroceryListPanel("Current List", "Your Current List")
@@ -28,7 +23,10 @@
         SavedListsPanel.Location = New Point(92, 0)
         SavedListsPanel.Hide()
 
-
+        TopBar = New TopBar(Me)
+        Me.Controls.Add(TopBar)
+        TopBar.Location = New Point(5, 0)
+        TopBar.Hide()
 
 
     End Sub
@@ -41,6 +39,10 @@
         NewList.Size = New Point(465, 670)
         NewList.Hide()
         ListOfLists.Add(NewList)
+    End Sub
+
+    Public Sub CopyToCurrentList()
+        CurrentListPanel = New GroceryListPanel(CurrentSavedListPanel)
     End Sub
 
     Public Sub showSavedListsPanel()

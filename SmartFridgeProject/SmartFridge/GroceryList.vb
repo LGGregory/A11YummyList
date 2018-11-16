@@ -5,6 +5,13 @@ Public Class GroceryList
     Dim ListInfo As String
     Dim ListName As String
 
+    Public Sub New(from As GroceryList)
+        For Each item As ItemInfo In from.List
+            List.Add(item.Clone)
+        Next
+        Name = from.Name
+        Text = from.Text
+    End Sub
 
     Public Sub New()
         'TODO
