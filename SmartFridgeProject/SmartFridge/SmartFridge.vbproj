@@ -92,6 +92,12 @@
     <Compile Include="GroceryListPanel.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="ListBar.Designer.vb">
+      <DependentUpon>ListBar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ListBar.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Recipe.vb" />
     <Compile Include="SidePanel.Designer.vb">
       <DependentUpon>SidePanel.vb</DependentUpon>
@@ -127,6 +133,12 @@
     <Compile Include="ItemBar.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="ListOfListsPanel.Designer.vb">
+      <DependentUpon>ListOfListsPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ListOfListsPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AddItem.resx">
@@ -137,6 +149,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GroceryListPanel.resx">
       <DependentUpon>GroceryListPanel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListBar.resx">
+      <DependentUpon>ListBar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListOfListsPanel.resx">
+      <DependentUpon>ListOfListsPanel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

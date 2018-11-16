@@ -21,4 +21,11 @@
         ' TODO
     End Sub
 
+    Private Sub GroceryListDefault_Load(sender As Object, e As EventArgs) Handles GroceryListDefault.Load
+
+    End Sub
+
+    Private Sub SidePanel1_Load(sender As Object, e As EventArgs) Handles SidePanel1.Load
+
+    End Sub
 End Class

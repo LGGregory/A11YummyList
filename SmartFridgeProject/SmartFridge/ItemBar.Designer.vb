@@ -73,7 +73,7 @@ Partial Class ItemBar
         Me.UpQuantityButton.Name = "UpQuantityButton"
         Me.UpQuantityButton.Size = New System.Drawing.Size(31, 23)
         Me.UpQuantityButton.TabIndex = 4
-        Me.UpQuantityButton.Text = "^"
+        Me.UpQuantityButton.Text = "+"
         Me.UpQuantityButton.UseVisualStyleBackColor = True
         '
         'DownQuantityButton
@@ -82,7 +82,7 @@ Partial Class ItemBar
         Me.DownQuantityButton.Name = "DownQuantityButton"
         Me.DownQuantityButton.Size = New System.Drawing.Size(31, 23)
         Me.DownQuantityButton.TabIndex = 5
-        Me.DownQuantityButton.Text = "v"
+        Me.DownQuantityButton.Text = "-"
         Me.DownQuantityButton.UseVisualStyleBackColor = True
         '
         'ItemBar
