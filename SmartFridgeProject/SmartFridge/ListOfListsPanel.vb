@@ -1,6 +1,7 @@
 ﻿Public Class ListOfListsPanel
     Private Sub AddListButton_Click(sender As Object, e As EventArgs) Handles AddListButton.Click
-
+        Dim f As New AddList(Me)
+        f.Show()
     End Sub
 
     Private Sub ListOfListsPanel_Load(sender As Object, e As EventArgs) Handles Me.Load

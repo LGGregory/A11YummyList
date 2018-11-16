@@ -3,7 +3,29 @@
 
     End Sub
 
+    Dim ParentList As ListOfListsPanel
 
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+
+
+
+    End Sub
+
+    Public Sub New(ByRef AddList As ListOfListsPanel)
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        ParentList = AddList
+        Me.Text = "Add New Saved List"
+
+    End Sub
 
     Private Sub ConfirmAddButton_Click(sender As Object, e As EventArgs) Handles ConfirmAddButton.Click
 
