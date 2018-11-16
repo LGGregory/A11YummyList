@@ -32,7 +32,6 @@ C:\Users\Ridge\Documents\GitHub\A11YummyList\SmartFridgeProject\SmartFridge\obj\
 C:\Users\Ridge\Documents\GitHub\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.pdb
 C:\Users\Ridge\Documents\GitHub\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.ListOfListsPanel.resources
 C:\Users\Ridge\Documents\GitHub\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.ListBar.resources
-C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.vbprojAssemblyReference.cache
 C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.ListBar.resources
 C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.ListOfListsPanel.resources
-C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.vbproj.CoreCompileInputs.cache
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.vbprojResolveAssemblyReference.cache

@@ -43,6 +43,7 @@
         FlowPanel.Controls.Clear()
         Current.Name = list.Name
         Current.Text = list.Text
+        DetailsBox.Text = list.Text
         Current.GroceryList = New List(Of ItemInfo)
 
         For Each oldItem In list.GroceryList
@@ -78,9 +79,6 @@
 
     Private Sub CancelChanges_Click(sender As Object, e As EventArgs) Handles CancelChanges.Click
         UpdateList(UpdatingList)
-        DetailsBox.Text = UpdatingList.GroceryList.Count & " " & FlowPanel.Controls.Count
-
-
     End Sub
 
     Private Sub ApplyChangesButton_Click(sender As Object, e As EventArgs) Handles ApplyChangesButton.Click
