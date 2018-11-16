@@ -16,14 +16,17 @@
 
     End Sub
 
+    Public Sub New(name As String, text As String)
 
-    Private Sub GroceryList_Load(sender As Object, e As EventArgs) Handles Me.Load
-        ' Sample Data
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
         Current = New GroceryList
 
         Dim ItemL As New GroceryList
-        ItemL.Name = "Default List"
-        ItemL.Text = "This is the default list"
+        ItemL.Name = name
+        ItemL.Text = text
         ItemL.AddItem(New ItemInfo("Broccoli", 3, "Lbs"))
         ItemL.AddItem(New ItemInfo("Milk", 4, "L"))
         ItemL.AddItem(New ItemInfo("Ground Beef", 2, "Kg"))
