@@ -54,3 +54,9 @@ D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridg
 D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\bin\Debug\SmartFridge.exe
 D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\bin\Debug\SmartFridge.pdb
 D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\bin\Debug\SmartFridge.xml
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.vbprojAssemblyReference.cache
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.vbproj.CopyComplete
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.LoadingScreen.resources
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.ServerForm.resources

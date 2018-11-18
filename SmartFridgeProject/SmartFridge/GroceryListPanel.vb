@@ -1,4 +1,5 @@
-﻿Public Class GroceryListPanel
+﻿Imports Newtonsoft.Json
+Public Class GroceryListPanel
     Private LName As String
     Private ItemCount As Integer
     Public Current As GroceryList
@@ -32,6 +33,7 @@
         ItemL.AddItem(New ItemInfo("Broccoli", 3, "Lbs"))
         ItemL.AddItem(New ItemInfo("Milk", 4, "L"))
         ItemL.AddItem(New ItemInfo("Ground Beef", 2, "Kg"))
+
         LoadList(ItemL)
     End Sub
 
@@ -46,6 +48,7 @@
         Current.Name = list.Name
         Current.Text = list.Text
         DetailsBox.Text = list.Text
+
         Current.GroceryList = New List(Of ItemInfo)
 
         For Each oldItem In list.GroceryList
