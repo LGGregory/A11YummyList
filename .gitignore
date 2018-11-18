@@ -1,9 +1,8 @@
-
+*.suo
 *.exe
 *.cache
 *.lock
 *.ide-wal
-SmartFridgeProject/.vs/SmartFridgeProject/v15/.suo
 *.ide-shm
 *.ide-wal
 SmartFridgeProject/SmartFridge/obj/Debug/SmartFridge.vbproj.FileListAbsolute.txt
