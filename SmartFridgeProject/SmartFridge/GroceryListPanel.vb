@@ -6,26 +6,13 @@
 
 
 
-    Public Sub AddItem(ByVal info As ItemInfo)
-        Current.AddItem(info)
+    Public Sub AddItem(list As GroceryList, ByVal info As ItemInfo)
+        list.AddItem(info)
         FlowPanel.Controls.Add(New ItemBar(info, Me))
     End Sub
 
     Public Sub RemoveItem(ByRef info As ItemInfo)
         Current.GroceryList.Remove(info)
-
-    End Sub
-
-    Public Sub New(from As GroceryListPanel)
-
-        ' This call is required by the designer.
-        InitializeComponent()
-
-        ' Add any initialization after the InitializeComponent() call.
-        ListTitle.Text = from.ListTitle.Text
-
-        Current = New GroceryList(from.Current)
-        LoadList(Current)
 
     End Sub
 
@@ -56,15 +43,22 @@
     Public Sub UpdateList(list As GroceryList)
 
         FlowPanel.Controls.Clear()
+
+        DetailsBox.Text = list.Text
+        Dim newList As GroceryList = New GroceryList()
+
+        newList.GroceryList = New List(Of ItemInfo)
+
+        For Each oldItem As ItemInfo In list.GroceryList
+            Dim newItem As ItemInfo = oldItem.Clone()
+            AddItem(newList, newItem)
+        Next
+
+        Current = newList
+
         Current.Name = list.Name
         Current.Text = list.Text
-        DetailsBox.Text = list.Text
-        Current.GroceryList = New List(Of ItemInfo)
 
-        For Each oldItem In list.GroceryList
-            Dim newItem As ItemInfo = oldItem.Clone()
-            AddItem(newItem)
-        Next
         CancelChanges.Hide()
         ApplyChangesButton.Hide()
     End Sub
@@ -83,10 +77,8 @@
     End Sub
 
     Public Sub ApplyChanges()
-        ' TODO apply changes from current list to saved list
+        LoadList(Current)
     End Sub
-
-
 
     Private Sub DetailsBox_TextChanged(sender As Object, e As EventArgs) Handles DetailsBox.TextChanged
         ListChanged()
@@ -97,6 +89,6 @@
     End Sub
 
     Private Sub ApplyChangesButton_Click(sender As Object, e As EventArgs) Handles ApplyChangesButton.Click
-
+        ApplyChanges()
     End Sub
 End Class

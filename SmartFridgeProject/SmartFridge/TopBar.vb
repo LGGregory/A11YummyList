@@ -8,19 +8,14 @@
 
         ' Add any initialization after the InitializeComponent() call.
         Fridge = parent
-        AddToCurrentListButton.Button.Text = "A"
-        CopyToCurrentListButton.Button.Text = "C"
-    End Sub
-
-    Private Sub AddToCurrentListButton_Load(sender As Object, e As EventArgs) Handles AddToCurrentListButton.Load
 
     End Sub
 
-    Private Sub CopyToCurrentListButton_Load(sender As Object, e As EventArgs) Handles CopyToCurrentListButton.Load
-
+    Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles AddButton.Click
+        Fridge.AddToSavedList(Fridge.CurrentSavedListPanel)
     End Sub
 
-    Private Sub CopyToCurrentListButton_Click(sender As Object, e As EventArgs) Handles CopyToCurrentListButton.Click
-        Fridge.CopyToCurrentList()
+    Private Sub CopyButton_Click(sender As Object, e As EventArgs) Handles CopyButton.Click
+        Fridge.CopyToCurrentList(Fridge.CurrentSavedListPanel)
     End Sub
 End Class

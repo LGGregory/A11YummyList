@@ -55,3 +55,4 @@ D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridg
 D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\bin\Debug\SmartFridge.xml
 C:\Users\Ridge\Documents\GitHub\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.TopBar.resources
 C:\Users\Ridge\Documents\GitHub\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.TopBarButton.resources
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.TopBar.resources

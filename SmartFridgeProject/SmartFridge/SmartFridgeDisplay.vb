@@ -41,8 +41,19 @@
         ListOfLists.Add(NewList)
     End Sub
 
-    Public Sub CopyToCurrentList()
-        CurrentListPanel = New GroceryListPanel(CurrentSavedListPanel)
+    Public Sub AddToSavedList(list As GroceryListPanel)
+        For Each item As ItemInfo In list.Current.GroceryList
+            If CurrentListPanel.Current.hasSameItemByName(item) Then
+                CurrentListPanel.Current.getSameItemByName(item).Quantity += item.Quantity
+            Else
+                CurrentListPanel.AddItem(CurrentListPanel.Current, item)
+            End If
+            CurrentListPanel.ApplyChanges()
+        Next
+    End Sub
+
+    Public Sub CopyToCurrentList(list As GroceryListPanel)
+        CurrentListPanel.LoadList(list.Current)
     End Sub
 
     Public Sub showSavedListsPanel()

@@ -22,37 +22,41 @@ Partial Class TopBar
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.AddToCurrentListButton = New SmartFridge.TopBarButton()
-        Me.CopyToCurrentListButton = New SmartFridge.TopBarButton()
+        Me.CopyButton = New System.Windows.Forms.Button()
+        Me.AddButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'AddToCurrentListButton
+        'CopyButton
         '
-        Me.AddToCurrentListButton.Location = New System.Drawing.Point(467, 0)
-        Me.AddToCurrentListButton.Name = "AddToCurrentListButton"
-        Me.AddToCurrentListButton.Size = New System.Drawing.Size(40, 40)
-        Me.AddToCurrentListButton.TabIndex = 1
+        Me.CopyButton.Location = New System.Drawing.Point(518, 2)
+        Me.CopyButton.Name = "CopyButton"
+        Me.CopyButton.Size = New System.Drawing.Size(38, 38)
+        Me.CopyButton.TabIndex = 0
+        Me.CopyButton.Text = "C"
+        Me.CopyButton.UseVisualStyleBackColor = True
         '
-        'CopyToCurrentListButton
+        'AddButton
         '
-        Me.CopyToCurrentListButton.Location = New System.Drawing.Point(513, 0)
-        Me.CopyToCurrentListButton.Name = "CopyToCurrentListButton"
-        Me.CopyToCurrentListButton.Size = New System.Drawing.Size(40, 40)
-        Me.CopyToCurrentListButton.TabIndex = 0
+        Me.AddButton.Location = New System.Drawing.Point(474, 2)
+        Me.AddButton.Name = "AddButton"
+        Me.AddButton.Size = New System.Drawing.Size(38, 38)
+        Me.AddButton.TabIndex = 1
+        Me.AddButton.Text = "A"
+        Me.AddButton.UseVisualStyleBackColor = True
         '
         'TopBar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Highlight
-        Me.Controls.Add(Me.AddToCurrentListButton)
-        Me.Controls.Add(Me.CopyToCurrentListButton)
+        Me.Controls.Add(Me.AddButton)
+        Me.Controls.Add(Me.CopyButton)
         Me.Name = "TopBar"
         Me.Size = New System.Drawing.Size(590, 40)
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents CopyToCurrentListButton As TopBarButton
-    Friend WithEvents AddToCurrentListButton As TopBarButton
+    Friend WithEvents CopyButton As Button
+    Friend WithEvents AddButton As Button
 End Class
