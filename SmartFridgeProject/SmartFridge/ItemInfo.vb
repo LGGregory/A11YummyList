@@ -23,10 +23,6 @@ Public Class ItemInfo
         Me.Unit = unit
     End Sub
 
-    Public Function SameName(item As ItemInfo) As Boolean
-        Return Name = item.Name
-    End Function
-
     Public Overrides Function Equals(obj As Object) As Boolean
         Dim info = TryCast(obj, ItemInfo)
         Return info IsNot Nothing AndAlso

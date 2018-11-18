@@ -17,6 +17,7 @@ C:\Users\Ridge\Documents\GitHub\A11YummyList\SmartFridgeProject\SmartFridge\bin\
 C:\Users\Ridge\Documents\GitHub\A11YummyList\SmartFridgeProject\SmartFridge\bin\Debug\SmartFridge.exe
 C:\Users\Ridge\Documents\GitHub\A11YummyList\SmartFridgeProject\SmartFridge\bin\Debug\SmartFridge.pdb
 C:\Users\Ridge\Documents\GitHub\A11YummyList\SmartFridgeProject\SmartFridge\bin\Debug\SmartFridge.xml
+C:\Users\Ridge\Documents\GitHub\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.vbprojAssemblyReference.cache
 C:\Users\Ridge\Documents\GitHub\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.AddItemForm.resources
 C:\Users\Ridge\Documents\GitHub\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.AddList.resources
 C:\Users\Ridge\Documents\GitHub\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.GroceryListPanel.resources
