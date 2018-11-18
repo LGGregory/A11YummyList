@@ -5,10 +5,35 @@ Public Class GroceryList
     Dim ListInfo As String
     Dim ListName As String
 
+    Public Sub New(from As GroceryList)
+        For Each item As ItemInfo In from.List
+            List.Add(item.Clone)
+        Next
+        Name = from.Name
+        Text = from.Text
+    End Sub
 
     Public Sub New()
         'TODO
     End Sub
+
+    Public Function hasSameItemByName(item As ItemInfo) As Boolean
+        For Each checkingItem As ItemInfo In List
+            If item.SameName(checkingItem) Then
+                Return True
+            End If
+        Next
+        Return False
+    End Function
+
+    Public Function getSameItemByName(item As ItemInfo) As ItemInfo
+        For Each checkingItem As ItemInfo In List
+            If item.SameName(checkingItem) Then
+                Return checkingItem
+            End If
+        Next
+        Return New ItemInfo("Nothing", 0, "Nada")
+    End Function
 
     Public Property GroceryList As List(Of ItemInfo)
         Get
