@@ -1,4 +1,4 @@
-﻿Public Class GroceryList
+Public Class GroceryList
     Dim List As New List(Of ItemInfo)
     Dim ListInfo As String
     Dim ListName As String
@@ -23,9 +23,10 @@
             Name = "List " & count
             Text = "Default List Number " & count
             count = count + 1
-            AddItem(New ItemInfo("Broccoli", 3, "Lbs"))
-            AddItem(New ItemInfo("Milk", 4, "L"))
-            AddItem(New ItemInfo("Ground Beef", 2, "Kg"))
+
+
+
+
         End If
     End Sub
     Public Sub New()
