@@ -1,4 +1,4 @@
-﻿Imports Newtonsoft.Json
+Imports Newtonsoft.Json
 Public Class SmartFridgeDisplay
     Public CurrentListPanel As GroceryListPanel
     Public SavedListsPanel As ListOfListsPanel
@@ -59,7 +59,8 @@ Public Class SmartFridgeDisplay
         SavedListsPanel.Location = NoBar
         SavedListsPanel.Hide()
 
-        CurrentList = New GroceryList(True)
+        CurrentList = New GroceryList("Default List", " ", False)
+        CurrentList.AddItem(New ItemInfo("Cream Cheese", 1, "lbs"))
         BaseList = CurrentList
 
         CurrentListPanel = New GroceryListPanel(Me, CurrentList)
@@ -68,10 +69,35 @@ Public Class SmartFridgeDisplay
         CurrentListPanel.Size = Bot
         CurrentListPanel.Show()
 
-        addGroceryList("Sample List 1", "A Sample List")
-        addGroceryList("Sample List 2", "A Sample List")
-        addGroceryList("Sample List 3", "A Sample List")
-        addGroceryList("Sample List 4", "A Sample List")
+        Dim GL1 As New GroceryList("Veggies", "Tasty, delicious, fresh.", False)
+        GL1.AddItem(New ItemInfo("Broccoli", 3, "Kg"))
+        GL1.AddItem(New ItemInfo("Mushrooms", 6, "lbs"))
+        GL1.AddItem(New ItemInfo("Red Peppers", 4, "ct"))
+        GL1.AddItem(New ItemInfo("Brussel Sprouts", 2, "Kg"))
+        addGroceryList(GL1)
+
+        Dim GL2 As New GroceryList("Junk Food", "Kids night in", False)
+        GL2.AddItem(New ItemInfo("Salsa", 1, "L"))
+        GL2.AddItem(New ItemInfo("Vanilla Ice Cream", 3, "Qt"))
+        GL2.AddItem(New ItemInfo("Corn Chips", 4, "Bags"))
+        GL2.AddItem(New ItemInfo("Dill Pickles", 2, "Kg"))
+        GL2.AddItem(New ItemInfo("Mozzarella", 1, "lbs"))
+        addGroceryList(GL2)
+
+        Dim GL3 As New GroceryList("Breakfasts", "First meal best meal", False)
+        GL3.AddItem(New ItemInfo("Bacon", 5, "lbs"))
+        GL3.AddItem(New ItemInfo("Eggs", 24, "ct"))
+        GL3.AddItem(New ItemInfo("Bread", 2, "ct"))
+        GL3.AddItem(New ItemInfo("Raspberry Jam", 1, "Kg"))
+        addGroceryList(GL3)
+
+        Dim GL4 As New GroceryList("LCBO", "Alcomohol is love", False)
+        GL4.AddItem(New ItemInfo("Sherry", 750, "mL"))
+        GL4.AddItem(New ItemInfo("Kraken", 1250, "mL"))
+        GL4.AddItem(New ItemInfo("Sibling Rivalry White 2009", 2, "ct"))
+        addGroceryList(GL4)
+
+
 
         TopBar = New TopBar(Me)
         Me.Controls.Add(TopBar)
@@ -86,14 +112,12 @@ Public Class SmartFridgeDisplay
         ListOfGLists.Add(NewGList)
         SavedListsPanel.AddNewList(NewGList)
 
+    End Sub
 
-        '    Dim NewList As GroceryListPanel
-        '    NewList = New GroceryListPanel(name, about)
-        '    Me.Controls.Add(NewList)
-        '    NewList.Location = New Point(92, 40)
-        '    NewList.Size = New Point(465, 670)
-        '    NewList.Hide()
-        '    ListOfLists.Add(NewList)
+    Public Sub addGroceryList(gList As GroceryList)
+        ListOfGLists.Add(gList)
+        SavedListsPanel.AddNewList(gList)
+
     End Sub
 
     Public Sub AddToSavedList(list As GroceryList)
@@ -148,12 +172,7 @@ Public Class SmartFridgeDisplay
         SavedListsPanel.BackColor = System.Drawing.Color.White
     End Sub
 
-    ' Adds a new Grocery List
-    ' Possible TODO: Rewrite GroceryListPanel as a seperate class from the Panel
-    ' That way porting it to Phone interpretation is easier
-    Public Sub AddList(ByRef List As GroceryListPanel)
-        ' TODO
-    End Sub
+
 
     'Private Sub GroceryListDefault_Load(sender As Object, e As EventArgs) Handles GroceryListDefault.Load
 
