@@ -3,6 +3,7 @@
     Public SavedListsPanel As ListOfListsPanel
     Public CurrentSavedListPanel As GroceryListPanel
     Public ListOfLists As New List(Of GroceryListPanel)
+    Public dataListener As New DataListener(Me)
     Public TopBar As TopBar
 
     Private Sub SmartFridgeDisplay_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -107,5 +108,9 @@
 
     Private Sub SidePanel1_Load(sender As Object, e As EventArgs) Handles SidePanel1.Load
         SidePanel1.SetParent(Me)
+    End Sub
+
+    Public Sub InitNetwork(IPAddress As String, PortNumber As Integer)
+        dataListener.Connect(IPAddress, PortNumber)
     End Sub
 End Class
