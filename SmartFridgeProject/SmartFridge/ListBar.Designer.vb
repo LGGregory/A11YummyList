@@ -39,7 +39,7 @@ Partial Class ListBar
         'ItemName
         '
         Me.ItemName.AutoSize = True
-        Me.ItemName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ItemName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ItemName.Location = New System.Drawing.Point(16, 12)
         Me.ItemName.Name = "ItemName"
         Me.ItemName.Size = New System.Drawing.Size(57, 20)

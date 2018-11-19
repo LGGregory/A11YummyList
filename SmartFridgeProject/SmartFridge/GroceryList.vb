@@ -4,6 +4,13 @@ Public Class GroceryList
     Dim List As New List(Of ItemInfo)
     Dim ListInfo As String
     Dim ListName As String
+    Shared count As Integer = 0
+
+    Public Sub New(name As String, about As String)
+        Me.New(True)
+        Me.Name = name
+        Text = about
+    End Sub
 
     Public Sub New(from As GroceryList)
         For Each item As ItemInfo In from.List
@@ -13,8 +20,22 @@ Public Class GroceryList
         Text = from.Text
     End Sub
 
+    Public Sub New(gen As Boolean)
+        If gen Then
+            Name = "List " & count
+            Text = "Default List Number " & count
+            count = count + 1
+            AddItem(New ItemInfo("Broccoli", 3, "Lbs"))
+            AddItem(New ItemInfo("Milk", 4, "L"))
+            AddItem(New ItemInfo("Ground Beef", 2, "Kg"))
+        End If
+    End Sub
     Public Sub New()
-        'TODO
+
+    End Sub
+
+    Public Sub New(Name As String)
+        Me.New(Name, "")
     End Sub
 
     Public Function hasSameItemByName(item As ItemInfo) As Boolean
@@ -71,5 +92,14 @@ Public Class GroceryList
 
     Public Sub RemoveItem(ByRef item As ItemInfo)
         List.Remove(item)
+    End Sub
+
+    Public Sub MatchList(other As GroceryList)
+        Name = other.Name
+        Text = other.Text
+        GroceryList = New List(Of ItemInfo)
+        For Each item As ItemInfo In other.GroceryList
+            AddItem(item.Clone)
+        Next
     End Sub
 End Class

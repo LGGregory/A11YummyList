@@ -49,7 +49,7 @@ Partial Class SidePanel
         '
         'SlideButton
         '
-        Me.SlideButton.Location = New System.Drawing.Point(286, 251)
+        Me.SlideButton.Location = New System.Drawing.Point(330, 251)
         Me.SlideButton.Name = "SlideButton"
         Me.SlideButton.Size = New System.Drawing.Size(31, 50)
         Me.SlideButton.TabIndex = 1
@@ -72,7 +72,7 @@ Partial Class SidePanel
         Me.MenuPanel.Controls.Add(Me.SavedListButton)
         Me.MenuPanel.Controls.Add(Me.RecipesButton)
         Me.MenuPanel.Controls.Add(Me.FridgeContentsButton)
-        Me.MenuPanel.Location = New System.Drawing.Point(58, 69)
+        Me.MenuPanel.Location = New System.Drawing.Point(69, 69)
         Me.MenuPanel.Name = "MenuPanel"
         Me.MenuPanel.Size = New System.Drawing.Size(232, 487)
         Me.MenuPanel.TabIndex = 4

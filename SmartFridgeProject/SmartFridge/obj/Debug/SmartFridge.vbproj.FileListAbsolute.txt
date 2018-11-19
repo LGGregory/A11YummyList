@@ -60,5 +60,4 @@ C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\D
 C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.LoadingScreen.resources
 C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.ServerForm.resources
 C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.TopBar.resources
->>>>>>> f65ff1f0c4f5489f94833a3fe36680dd12e61b1e
 C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.PhoneDisplay.resources

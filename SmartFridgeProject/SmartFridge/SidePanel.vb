@@ -1,7 +1,7 @@
 ﻿Public Class SidePanel
     Dim Fridge As SmartFridgeDisplay = Nothing
-    Dim ExpandedWidth As Integer = 380
-    Dim ShrunkWidth As Integer = 70
+    Public ExpandedWidth As Integer = 380
+    Public ShrunkWidth As Integer = 70
 
     Dim ExpandedBoolean As Boolean = True
 
@@ -55,7 +55,8 @@
 
     ' Switch to Main List
     Private Sub CurrentListButton_Click(sender As Object, e As EventArgs) Handles CurrentListButton.Click
-        Fridge.showCurrentListPanel()
+        Fridge.CurrentListPanel.LoadList(Fridge.BaseList)
+        Fridge.ShowList(Fridge.BaseList, False)
         BurgerShrinkAction()
     End Sub
 

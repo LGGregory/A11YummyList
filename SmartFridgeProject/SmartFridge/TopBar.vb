@@ -12,10 +12,10 @@
     End Sub
 
     Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles AddButton.Click
-        Fridge.AddToSavedList(Fridge.CurrentSavedListPanel)
+        Fridge.AddToSavedList(Fridge.CurrentListPanel.UpdatingList)
     End Sub
 
     Private Sub CopyButton_Click(sender As Object, e As EventArgs) Handles CopyButton.Click
-        Fridge.CopyToCurrentList(Fridge.CurrentSavedListPanel)
+        Fridge.CopyToCurrentList(Fridge.CurrentListPanel.UpdatingList)
     End Sub
 End Class

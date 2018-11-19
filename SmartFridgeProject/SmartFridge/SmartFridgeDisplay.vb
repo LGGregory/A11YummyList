@@ -1,28 +1,69 @@
 ﻿Public Class SmartFridgeDisplay
     Public CurrentListPanel As GroceryListPanel
     Public SavedListsPanel As ListOfListsPanel
-    Public CurrentSavedListPanel As GroceryListPanel
-    Public ListOfLists As New List(Of GroceryListPanel)
-    Public dataListener As New DataListenerFridge(Me)
+    Public CurrentList As GroceryList
+    Public BaseList As GroceryList
+    Public ListOfGLists As New List(Of GroceryList)
+    Public dataListener As DataListener
     Public TopBar As TopBar
+    Public NoBar As New Point(92, 0)
+    Public WiBar As New Point(92, 40)
+    Public Bot As New Point(465, 670)
+
+    Public FridgeOrPhone As Boolean
+
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        dataListener = New DataListenerFridge
+        dataListener.formSet(Me)
+
+
+    End Sub
+
+    Public Sub New(fridge As Boolean)
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        FridgeOrPhone = fridge
+        If FridgeOrPhone Then
+            dataListener = New DataListenerFridge
+            dataListener.formSet(Me)
+            Text = "Fridge"
+        Else
+            dataListener = New DataListenerPhone
+            dataListener.formSet(Me)
+            Text = "Phone"
+        End If
+
+
+    End Sub
 
     Private Sub SmartFridgeDisplay_Load(sender As Object, e As EventArgs) Handles Me.Load
+
+        SavedListsPanel = New ListOfListsPanel(Me)
+        Me.Controls.Add(SavedListsPanel)
+        SavedListsPanel.Location = NoBar
+        SavedListsPanel.Hide()
+
+        CurrentList = New GroceryList(True)
+        BaseList = CurrentList
+
+        CurrentListPanel = New GroceryListPanel(CurrentList)
+        Me.Controls.Add(CurrentListPanel)
+        CurrentListPanel.Location = NoBar
+        CurrentListPanel.Size = Bot
+        CurrentListPanel.Show()
 
         addGroceryList("Sample List 1", "A Sample List")
         addGroceryList("Sample List 2", "A Sample List")
         addGroceryList("Sample List 3", "A Sample List")
         addGroceryList("Sample List 4", "A Sample List")
-
-        CurrentSavedListPanel = ListOfLists.First()
-
-        CurrentListPanel = New GroceryListPanel("Current List", "Your Current List")
-        Me.Controls.Add(CurrentListPanel)
-        CurrentListPanel.Location = New Point(92, 0)
-        CurrentListPanel.Show()
-        SavedListsPanel = New ListOfListsPanel(Me)
-        Me.Controls.Add(SavedListsPanel)
-        SavedListsPanel.Location = New Point(92, 0)
-        SavedListsPanel.Hide()
 
         TopBar = New TopBar(Me)
         Me.Controls.Add(TopBar)
@@ -33,65 +74,69 @@
     End Sub
 
     Public Sub addGroceryList(name As String, about As String)
-        Dim NewList As GroceryListPanel
-        NewList = New GroceryListPanel(name, about)
-        Me.Controls.Add(NewList)
-        NewList.Location = New Point(92, 40)
-        NewList.Size = New Point(465, 670)
-        NewList.Hide()
-        ListOfLists.Add(NewList)
+        Dim NewGList As New GroceryList(name, about)
+        ListOfGLists.Add(NewGList)
+        SavedListsPanel.AddNewList(NewGList)
+
+
+        '    Dim NewList As GroceryListPanel
+        '    NewList = New GroceryListPanel(name, about)
+        '    Me.Controls.Add(NewList)
+        '    NewList.Location = New Point(92, 40)
+        '    NewList.Size = New Point(465, 670)
+        '    NewList.Hide()
+        '    ListOfLists.Add(NewList)
     End Sub
 
-    Public Sub AddToSavedList(list As GroceryListPanel)
-        For Each item As ItemInfo In list.Current.GroceryList
-            If CurrentListPanel.Current.hasSameItemByName(item) Then
-                CurrentListPanel.Current.getSameItemByName(item).Quantity += item.Quantity
+    Public Sub AddToSavedList(list As GroceryList)
+        For Each item As ItemInfo In list.GroceryList
+            If BaseList.hasSameItemByName(item) Then
+                BaseList.getSameItemByName(item).Quantity += item.Quantity
             Else
-                CurrentListPanel.AddItem(CurrentListPanel.Current, item)
+                BaseList.AddItem(item)
             End If
-            CurrentListPanel.ApplyChanges()
         Next
     End Sub
 
-    Public Sub CopyToCurrentList(list As GroceryListPanel)
-        CurrentListPanel.LoadList(list.Current)
+    Public Sub CopyToCurrentList(list As GroceryList)
+        BaseList = list
     End Sub
 
     Public Sub showSavedListsPanel()
-        CurrentSavedListPanel.Hide()
         CurrentListPanel.Hide()
         SavedListsPanel.Show()
         TopBar.Hide()
     End Sub
 
     Public Sub showCurrentListPanel()
-        CurrentSavedListPanel.Hide()
         SavedListsPanel.Hide()
         TopBar.Hide()
         CurrentListPanel.Show()
     End Sub
 
-    Public Sub setCurrentSavedListPanel(panel As GroceryListPanel)
-        CurrentListPanel.Hide()
+    Public Sub ShowList(list As GroceryList, bar As Boolean)
         SavedListsPanel.Hide()
-        TopBar.Show()
-        CurrentSavedListPanel.Hide()
-        CurrentSavedListPanel = panel
-        CurrentSavedListPanel.Show()
-
+        CurrentList = list
+        CurrentListPanel.LoadList(list)
+        If bar Then
+            TopBar.Show()
+            CurrentListPanel.Location = WiBar
+        Else
+            TopBar.Hide()
+            CurrentListPanel.Location = NoBar
+        End If
+        CurrentListPanel.Show()
     End Sub
 
     Public Sub DimPanel()
         Me.BackColor = System.Drawing.Color.Silver
         CurrentListPanel.BackColor = System.Drawing.Color.Silver
         SavedListsPanel.BackColor = System.Drawing.Color.Silver
-        CurrentSavedListPanel.BackColor = System.Drawing.Color.Silver
     End Sub
 
     Public Sub UnDimPanel()
         Me.BackColor = System.Drawing.Color.White
         CurrentListPanel.BackColor = System.Drawing.Color.White
-        CurrentSavedListPanel.BackColor = System.Drawing.Color.White
         SavedListsPanel.BackColor = System.Drawing.Color.White
     End Sub
 
@@ -111,6 +156,9 @@
     End Sub
 
     Public Sub InitNetwork(IPAddress As String, PortNumber As Integer)
+        dataListener.FormSet(Me)
+
         dataListener.Connect(IPAddress, PortNumber)
     End Sub
+
 End Class
