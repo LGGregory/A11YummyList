@@ -11,7 +11,7 @@
     End Sub
 
     Private Sub FridgeButton_Click(sender As Object, e As EventArgs) Handles FridgeButton.Click
-        Dim SFD As New SmartFridgeDisplay
+        Dim SFD As New SmartFridgeDisplay(True)
         SFD.Show()
         SFD.InitNetwork(IPBox.Text, PortBox.Text)
         Me.Close()
@@ -19,9 +19,10 @@
     End Sub
 
     Private Sub PhoneButton_Click(sender As Object, e As EventArgs) Handles PhoneButton.Click
-        Dim SFD As New PhoneDisplay
+        Dim SFD As New SmartFridgeDisplay(False)
         SFD.Show()
         SFD.InitNetwork(IPBox.Text, PortBox.Text)
         Me.Close()
     End Sub
+
 End Class

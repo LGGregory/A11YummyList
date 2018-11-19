@@ -55,6 +55,7 @@
 
     ' Switch to Main List
     Private Sub CurrentListButton_Click(sender As Object, e As EventArgs) Handles CurrentListButton.Click
+        Fridge.CurrentListPanel.HideFridge()
         Fridge.CurrentListPanel.LoadList(Fridge.BaseList)
         Fridge.ShowList(Fridge.BaseList, False)
         BurgerShrinkAction()
@@ -62,6 +63,7 @@
 
     ' Switch to List of Recurring (Saved) List
     Private Sub SavedListButton_Click(sender As Object, e As EventArgs) Handles SavedListButton.Click
+        Fridge.CurrentListPanel.HideFridge()
         Fridge.showSavedListsPanel()
         BurgerShrinkAction()
 
@@ -69,11 +71,19 @@
 
     ' Switch to Recipe Display
     Private Sub RecipesButton_Click(sender As Object, e As EventArgs) Handles RecipesButton.Click
-        'TODO
+
+        Fridge.CurrentListPanel.HideFridge()
+        Fridge.CurrentListPanel.LoadList(Fridge.BaseList)
+        Fridge.ShowList(Fridge.BaseList, False)
+        BurgerShrinkAction()
+        'TODO : currently returns to home page
     End Sub
 
     ' Switch to Fridge Contents List
     Private Sub FridgeContentsButton_Click(sender As Object, e As EventArgs) Handles FridgeContentsButton.Click
-        'TODO
+        Fridge.ShowList(Fridge.FridgeContents, False)
+        Fridge.CurrentListPanel.ShowFridge()
+
+        BurgerShrinkAction()
     End Sub
 End Class

@@ -46,7 +46,7 @@ Partial Class LoadingScreen
         Me.PhoneButton.Name = "PhoneButton"
         Me.PhoneButton.Size = New System.Drawing.Size(75, 23)
         Me.PhoneButton.TabIndex = 1
-        Me.PhoneButton.Text = "Phone (NYI)"
+        Me.PhoneButton.Text = "Phone"
         Me.PhoneButton.UseVisualStyleBackColor = True
         '
         'ServerButton
@@ -64,7 +64,7 @@ Partial Class LoadingScreen
         Me.IPBox.Name = "IPBox"
         Me.IPBox.Size = New System.Drawing.Size(100, 20)
         Me.IPBox.TabIndex = 3
-        Me.IPBox.Text = "127.0.0.1"
+        Me.IPBox.Text = "108.162.155.44"
         '
         'PortBox
         '
@@ -72,7 +72,7 @@ Partial Class LoadingScreen
         Me.PortBox.Name = "PortBox"
         Me.PortBox.Size = New System.Drawing.Size(100, 20)
         Me.PortBox.TabIndex = 4
-        Me.PortBox.Text = "7712"
+        Me.PortBox.Text = "9210"
         '
         'Label1
         '

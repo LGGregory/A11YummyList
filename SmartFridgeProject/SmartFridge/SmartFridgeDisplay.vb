@@ -1,8 +1,10 @@
-﻿Public Class SmartFridgeDisplay
+﻿Imports Newtonsoft.Json
+Public Class SmartFridgeDisplay
     Public CurrentListPanel As GroceryListPanel
     Public SavedListsPanel As ListOfListsPanel
     Public CurrentList As GroceryList
     Public BaseList As GroceryList
+    Public FridgeContents As GroceryList
     Public ListOfGLists As New List(Of GroceryList)
     Public dataListener As DataListener
     Public TopBar As TopBar
@@ -46,6 +48,12 @@
 
     Private Sub SmartFridgeDisplay_Load(sender As Object, e As EventArgs) Handles Me.Load
 
+        FridgeContents = New GroceryList("Fridge", "The contents of the fridge." & vbNewLine & "Why do you have so many pickles?", False)
+        FridgeContents.AddItem(New ItemInfo("Sweet Pickles", 700, "ct"))
+        FridgeContents.AddItem(New ItemInfo("Dill Pickles", 320, "ct"))
+        FridgeContents.AddItem(New ItemInfo("Kosher Sandwich Pickles", 20, "ct"))
+        FridgeContents.AddItem(New ItemInfo("Cucumbers in Brine", 6, "kg"))
+
         SavedListsPanel = New ListOfListsPanel(Me)
         Me.Controls.Add(SavedListsPanel)
         SavedListsPanel.Location = NoBar
@@ -54,7 +62,7 @@
         CurrentList = New GroceryList(True)
         BaseList = CurrentList
 
-        CurrentListPanel = New GroceryListPanel(CurrentList)
+        CurrentListPanel = New GroceryListPanel(Me, CurrentList)
         Me.Controls.Add(CurrentListPanel)
         CurrentListPanel.Location = NoBar
         CurrentListPanel.Size = Bot
@@ -74,7 +82,7 @@
     End Sub
 
     Public Sub addGroceryList(name As String, about As String)
-        Dim NewGList As New GroceryList(name, about)
+        Dim NewGList As New GroceryList(name, about, True)
         ListOfGLists.Add(NewGList)
         SavedListsPanel.AddNewList(NewGList)
 
@@ -156,9 +164,11 @@
     End Sub
 
     Public Sub InitNetwork(IPAddress As String, PortNumber As Integer)
-        dataListener.FormSet(Me)
-
+        dataListener.formSet(Me)
         dataListener.Connect(IPAddress, PortNumber)
     End Sub
 
+    Public Sub Send(data As String)
+        dataListener.Send(data)
+    End Sub
 End Class

@@ -1,4 +1,5 @@
-﻿Imports System.Net
+﻿Imports Newtonsoft.Json
+Imports System.Net
 Imports System.IO
 Imports System.Net.Sockets
 Imports SmartFridge
@@ -14,7 +15,9 @@ Public Class DataListenerFridge
         If FridgePanel.InvokeRequired Then
             FridgePanel.Invoke(New _xUpdate(AddressOf xUpdate), str)
         Else
-            FridgePanel.Text = Format(Now, "hh:mm:ss")
+
+
+
         End If
     End Sub
 

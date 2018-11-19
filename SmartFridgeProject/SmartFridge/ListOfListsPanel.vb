@@ -33,7 +33,7 @@
     End Sub
 
     Public Sub AddNewList(name As String)
-        Dim gList As New GroceryList(name, "New List")
+        Dim gList As New GroceryList(name, "New List", False)
         ListList.Add(gList)
         FlowPanel.Controls.Add(New ListBar(gList, Me))
     End Sub

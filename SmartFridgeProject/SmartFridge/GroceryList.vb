@@ -1,13 +1,11 @@
-﻿Imports SmartFridge
-
-Public Class GroceryList
+﻿Public Class GroceryList
     Dim List As New List(Of ItemInfo)
     Dim ListInfo As String
     Dim ListName As String
     Shared count As Integer = 0
 
-    Public Sub New(name As String, about As String)
-        Me.New(True)
+    Public Sub New(name As String, about As String, gen As Boolean)
+        Me.New(gen)
         Me.Name = name
         Text = about
     End Sub
@@ -35,7 +33,7 @@ Public Class GroceryList
     End Sub
 
     Public Sub New(Name As String)
-        Me.New(Name, "")
+        Me.New(Name, "", False)
     End Sub
 
     Public Function hasSameItemByName(item As ItemInfo) As Boolean

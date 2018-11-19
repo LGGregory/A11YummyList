@@ -16,7 +16,7 @@
 
     End Sub
 
-    Public Sub New(info As ItemInfo, ByRef list As GroceryListPanel)
+    Public Sub New(info As ItemInfo, ByRef list As ContentPanel)
 
         ' This call is required by the designer.
         InitializeComponent()
@@ -66,4 +66,5 @@
         DeleteItem()
 
     End Sub
+
 End Class
