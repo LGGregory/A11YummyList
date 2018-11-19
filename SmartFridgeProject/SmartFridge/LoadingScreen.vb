@@ -24,4 +24,5 @@
         SFD.InitNetwork(IPBox.Text, PortBox.Text)
         Me.Close()
     End Sub
+
 End Class

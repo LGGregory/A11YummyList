@@ -16,10 +16,9 @@ Public Class DataListenerFridge
             FridgePanel.Invoke(New _xUpdate(AddressOf xUpdate), str)
         Else
 
-            FridgePanel.CurrentListPanel.DetailsBox.Text &= vbNewLine & "sent"
 
 
-            End If
+        End If
     End Sub
 
     Sub read(ByVal ar As IAsyncResult) Implements DataListener.Read
