@@ -33,10 +33,6 @@
             Width = Width + 5
         Loop
 
-
-
-
-
     End Sub
 
     Private Sub BurgerShrinkAction()

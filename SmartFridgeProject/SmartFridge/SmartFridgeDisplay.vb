@@ -3,7 +3,7 @@
     Public SavedListsPanel As ListOfListsPanel
     Public CurrentSavedListPanel As GroceryListPanel
     Public ListOfLists As New List(Of GroceryListPanel)
-    Public dataListener As New DataListener(Me)
+    Public dataListener As New DataListenerFridge(Me)
     Public TopBar As TopBar
 
     Private Sub SmartFridgeDisplay_Load(sender As Object, e As EventArgs) Handles Me.Load

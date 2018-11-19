@@ -1,7 +1,7 @@
 ﻿Imports System.Net
 Imports System.IO
 Imports System.Net.Sockets
-Public Class DataListener
+Public Class DataListenerFridge
     Private client As TcpClient
     Private stream As NetworkStream
     Dim FridgePanel As SmartFridgeDisplay

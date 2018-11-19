@@ -88,7 +88,14 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ClientClass.vb" />
-    <Compile Include="DataListener.vb" />
+    <Compile Include="DataListenerPhone.vb" />
+    <Compile Include="DataListenerFridge.vb" />
+    <Compile Include="PhoneDisplay.Designer.vb">
+      <DependentUpon>PhoneDisplay.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PhoneDisplay.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GroceryList.vb" />
     <Compile Include="ItemInfo.vb" />
     <Compile Include="GroceryListPanel.Designer.vb">
@@ -169,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddList.resx">
       <DependentUpon>AddList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhoneDisplay.resx">
+      <DependentUpon>PhoneDisplay.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GroceryListPanel.resx">
       <DependentUpon>GroceryListPanel.vb</DependentUpon>

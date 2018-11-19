@@ -17,4 +17,11 @@
         Me.Close()
 
     End Sub
+
+    Private Sub PhoneButton_Click(sender As Object, e As EventArgs) Handles PhoneButton.Click
+        Dim SFD As New PhoneDisplay
+        SFD.Show()
+        SFD.InitNetwork(IPBox.Text, PortBox.Text)
+        Me.Close()
+    End Sub
 End Class
