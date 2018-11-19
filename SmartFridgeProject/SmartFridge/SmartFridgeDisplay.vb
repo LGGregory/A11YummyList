@@ -20,6 +20,7 @@ Public Class SmartFridgeDisplay
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
+        FridgeOrPhone = True
         dataListener = New DataListenerFridge
         dataListener.formSet(Me)
 
