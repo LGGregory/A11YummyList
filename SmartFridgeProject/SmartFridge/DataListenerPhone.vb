@@ -1,4 +1,5 @@
-﻿Imports System.Net
+﻿Imports Newtonsoft.Json
+Imports System.Net
 Imports System.IO
 Imports System.Net.Sockets
 Imports SmartFridge
@@ -14,7 +15,14 @@ Public Class DataListenerPhone
         If FridgePanel.InvokeRequired Then
             FridgePanel.Invoke(New _xUpdate(AddressOf xUpdate), str)
         Else
-            FridgePanel.Text = Format(Now, "hh:mm:ss")
+            Try
+                Dim aJson As ActionJson
+                aJson = JsonConvert.DeserializeObject(Of ActionJson)(str)
+                If aJson.Action = "update" Then
+                    FridgePanel.CurrentListPanel.LoadList(aJson.List)
+                End If
+            Catch ex As Exception
+            End Try
         End If
     End Sub
 

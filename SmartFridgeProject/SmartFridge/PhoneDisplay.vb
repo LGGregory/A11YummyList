@@ -19,7 +19,7 @@
         SidePanel1.ExpandedWidth = Width
 
         CurrentList = New GroceryList()
-        CurrentListPanel = New GroceryListPanel(CurrentList)
+        'CurrentListPanel = New GroceryListPanel(CurrentList)
         Me.Controls.Add(CurrentListPanel)
         CurrentListPanel.Location = NestPoint
         CurrentListPanel.Dock = DockStyle.Fill

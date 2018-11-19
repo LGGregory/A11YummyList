@@ -75,6 +75,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionJson.vb" />
     <Compile Include="AddItem.Designer.vb">
       <DependentUpon>AddItem.vb</DependentUpon>
     </Compile>
@@ -88,9 +89,16 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ClientClass.vb" />
+    <Compile Include="ContentPanel.vb" />
     <Compile Include="DataListener.vb" />
     <Compile Include="DataListenerPhone.vb" />
     <Compile Include="DataListenerFridge.vb" />
+    <Compile Include="FridgePanelObsolete.Designer.vb">
+      <DependentUpon>FridgePanelObsolete.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FridgePanelObsolete.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="PhoneDisplay.Designer.vb">
       <DependentUpon>PhoneDisplay.vb</DependentUpon>
     </Compile>
@@ -177,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddList.resx">
       <DependentUpon>AddList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FridgePanelObsolete.resx">
+      <DependentUpon>FridgePanelObsolete.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PhoneDisplay.resx">
       <DependentUpon>PhoneDisplay.vb</DependentUpon>

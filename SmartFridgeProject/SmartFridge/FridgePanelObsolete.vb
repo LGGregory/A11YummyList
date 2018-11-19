@@ -1,7 +1,7 @@
 ﻿Imports Newtonsoft.Json
 Imports SmartFridge
 
-Public Class GroceryListPanel
+Public Class FridgePanelObsolete
     Implements ContentPanel
     Private LName As String
     Private ItemCount As Integer
@@ -54,7 +54,6 @@ Public Class GroceryListPanel
         ItemL.AddItem(New ItemInfo("Milk", 4, "L"))
         ItemL.AddItem(New ItemInfo("Ground Beef", 2, "Kg"))
 
-        Fridge = parent
         LoadList(ItemL)
     End Sub
 
@@ -65,7 +64,6 @@ Public Class GroceryListPanel
 
         ' Add any initialization after the InitializeComponent() call.
 
-        Fridge = parent
         LoadList(list)
 
     End Sub
@@ -130,32 +128,5 @@ Public Class GroceryListPanel
         ApplyChanges()
     End Sub
 
-    Private Sub SendToPhoneButton_Click(sender As Object, e As EventArgs) Handles SendToPhoneButton.Click
-        Dim aJson As New ActionJson
-        aJson.Type = "list"
-        aJson.Action = "update"
-        aJson.List = UpdatingList
-        Fridge.Send(JsonConvert.SerializeObject(aJson))
-    End Sub
 
-    Private Sub EnableSend()
-        SendToPhoneButton.Show()
-    End Sub
-
-    Private Sub DisableSend()
-        SendToPhoneButton.Hide()
-    End Sub
-
-    Public Sub ShowFridge()
-        DisableSend()
-        DetailsBox.Enabled = False
-    End Sub
-
-    Public Sub HideFridge()
-        EnableSend()
-        DetailsBox.Enabled = True
-    End Sub
-
-    'Private Sub DetailsButton_Click(sender As Object, e As EventArgs) Handles DetailsButton.Click
-    'End Sub
 End Class

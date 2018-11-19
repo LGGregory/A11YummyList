@@ -12,7 +12,7 @@
 
     End Sub
 
-    Public Sub New(ByRef AddList As GroceryListPanel)
+    Public Sub New(ByRef AddList As ContentPanel)
 
         ' This call is required by the designer.
         InitializeComponent()
