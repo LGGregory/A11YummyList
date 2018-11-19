@@ -24,8 +24,10 @@
     End Sub
 
     Public Sub addNewList(name As String)
-        Fridge.ListOfLists.Add(New GroceryListPanel(name, "A New List"))
+        Fridge.addGroceryList(name, "A New List")
         FlowPanel.Controls.Add(New ListBar(Fridge.ListOfLists.Last, Me))
+
+
     End Sub
 
     Public Sub setCurrentSavedListPanel(panel As GroceryListPanel)
