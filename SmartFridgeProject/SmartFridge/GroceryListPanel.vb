@@ -139,7 +139,10 @@ Public Class GroceryListPanel
     End Sub
 
     Private Sub EnableSend()
-        SendToPhoneButton.Show()
+        If Fridge.FridgeOrPhone Then
+            SendToPhoneButton.Show()
+        End If
+
     End Sub
 
     Private Sub DisableSend()
