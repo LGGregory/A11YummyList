@@ -65,6 +65,9 @@ Public Class SmartFridgeDisplay
         BaseList = CurrentList
 
         CurrentListPanel = New GroceryListPanel(Me, CurrentList)
+        If Not FridgeOrPhone Then
+            CurrentListPanel.HideFridge()
+        End If
         Me.Controls.Add(CurrentListPanel)
         CurrentListPanel.Location = NoBar
         CurrentListPanel.Size = Bot
