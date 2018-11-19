@@ -14,7 +14,6 @@ Public Class GroceryListPanel
 
     Public Sub RemoveItem(ByRef info As ItemInfo)
         Current.GroceryList.Remove(info)
-
     End Sub
 
     Public Sub New(name As String, text As String)
@@ -37,6 +36,18 @@ Public Class GroceryListPanel
         LoadList(ItemL)
     End Sub
 
+    Public Sub New(list As GroceryList)
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+
+        LoadList(list)
+
+    End Sub
+
+
     Public Sub LoadList(list As GroceryList)
         UpdatingList = list
         UpdateList(list)
@@ -45,23 +56,18 @@ Public Class GroceryListPanel
     Public Sub UpdateList(list As GroceryList)
 
         FlowPanel.Controls.Clear()
-
+        ListTitle.Text = list.Name
         DetailsBox.Text = list.Text
 
 
-        Current.GroceryList = New List(Of ItemInfo)
-
         Dim newList As GroceryList = New GroceryList()
-
         newList.GroceryList = New List(Of ItemInfo)
 
         For Each oldItem As ItemInfo In list.GroceryList
             Dim newItem As ItemInfo = oldItem.Clone()
             AddItem(newList, newItem)
         Next
-
         Current = newList
-
         Current.Name = list.Name
         Current.Text = list.Text
 
@@ -83,10 +89,12 @@ Public Class GroceryListPanel
     End Sub
 
     Public Sub ApplyChanges()
-        LoadList(Current)
+        UpdatingList.MatchList(Current)
+        LoadList(UpdatingList)
     End Sub
 
     Private Sub DetailsBox_TextChanged(sender As Object, e As EventArgs) Handles DetailsBox.TextChanged
+        Current.Text = DetailsBox.Text
         ListChanged()
     End Sub
 

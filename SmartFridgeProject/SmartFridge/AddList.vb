@@ -28,7 +28,7 @@
     End Sub
 
     Private Sub ConfirmAddButton_Click(sender As Object, e As EventArgs) Handles ConfirmAddButton.Click
-        ParentList.addNewList(ItemName.Text)
+        ParentList.AddNewList(ItemName.Text)
         Close()
     End Sub
 

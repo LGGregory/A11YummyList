@@ -28,20 +28,20 @@ Partial Class TopBar
         '
         'CopyButton
         '
-        Me.CopyButton.Location = New System.Drawing.Point(518, 2)
+        Me.CopyButton.Location = New System.Drawing.Point(481, 1)
         Me.CopyButton.Name = "CopyButton"
-        Me.CopyButton.Size = New System.Drawing.Size(38, 38)
+        Me.CopyButton.Size = New System.Drawing.Size(78, 38)
         Me.CopyButton.TabIndex = 0
-        Me.CopyButton.Text = "C"
+        Me.CopyButton.Text = "Copy to List"
         Me.CopyButton.UseVisualStyleBackColor = True
         '
         'AddButton
         '
-        Me.AddButton.Location = New System.Drawing.Point(474, 2)
+        Me.AddButton.Location = New System.Drawing.Point(397, 1)
         Me.AddButton.Name = "AddButton"
-        Me.AddButton.Size = New System.Drawing.Size(38, 38)
+        Me.AddButton.Size = New System.Drawing.Size(78, 38)
         Me.AddButton.TabIndex = 1
-        Me.AddButton.Text = "A"
+        Me.AddButton.Text = "Add to List"
         Me.AddButton.UseVisualStyleBackColor = True
         '
         'TopBar

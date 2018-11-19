@@ -27,7 +27,7 @@ Partial Class PhoneDisplay
         '
         'SidePanel1
         '
-        Me.SidePanel1.BackColor = System.Drawing.Color.DarkGreen
+        Me.SidePanel1.BackColor = System.Drawing.SystemColors.Highlight
         Me.SidePanel1.Location = New System.Drawing.Point(0, 0)
         Me.SidePanel1.Name = "SidePanel1"
         Me.SidePanel1.Size = New System.Drawing.Size(69, 518)

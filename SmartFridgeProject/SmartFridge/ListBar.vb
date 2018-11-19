@@ -1,15 +1,15 @@
 ﻿Public Class ListBar
-    Dim List As GroceryListPanel
+    Public List As GroceryList
     Dim Panel As ListOfListsPanel
 
 
-    Public Sub New(list As GroceryListPanel, ByRef panel As ListOfListsPanel)
+    Public Sub New(list As GroceryList, ByRef panel As ListOfListsPanel)
 
         ' This call is required by the designer.
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-
+        CopyButton.Hide()
         Me.List = list
         Me.Panel = panel
 
@@ -18,11 +18,7 @@
     End Sub
 
     Public Sub DeleteItem()
-        List.Name = "Deleted"
-
-        UpdateInfo()
-        Panel.removeListBar(Me, List)
-
+        Panel.RemoveList(List)
     End Sub
 
     Public Sub CopyItem()
@@ -30,7 +26,7 @@
     End Sub
 
     Private Sub UpdateInfo()
-        ItemName.Text = List.Current.Name
+        ItemName.Text = List.Name
     End Sub
 
     Private Sub RemoveButton_Click(sender As Object, e As EventArgs) Handles RemoveButton.Click
@@ -42,6 +38,6 @@
     End Sub
 
     Private Sub ItemName_Click(sender As Object, e As EventArgs) Handles ItemName.Click
-        Panel.setCurrentSavedListPanel(List)
+        Panel.ShowSavedList(List)
     End Sub
 End Class

@@ -1,5 +1,6 @@
 ﻿Public Class ListOfListsPanel
     Dim Fridge As SmartFridgeDisplay
+    Public ListList As New List(Of GroceryList)
 
     Private Sub AddListButton_Click(sender As Object, e As EventArgs) Handles AddListButton.Click
         Dim f As New AddList(Me)
@@ -13,25 +14,32 @@
 
         ' Add any initialization after the InitializeComponent() call.
         Fridge = parent
-        For Each list As GroceryListPanel In Fridge.ListOfLists
-            FlowPanel.Controls.Add(New ListBar(list, Me))
+
+
+    End Sub
+
+    Public Sub RemoveList(list As GroceryList)
+        Fridge.ListOfGLists.Remove(list)
+        For Each bar As ListBar In FlowPanel.Controls
+            If bar.List Is list Then
+                FlowPanel.Controls.Remove(bar)
+            End If
         Next
     End Sub
 
-    Public Sub removeListBar(bar As ListBar, listPanel As GroceryListPanel)
-        Fridge.ListOfLists.Remove(listPanel)
-        FlowPanel.Controls.Remove(bar)
+    Public Sub AddNewList(gList As GroceryList)
+        ListList.Add(gList)
+        FlowPanel.Controls.Add(New ListBar(gList, Me))
     End Sub
 
-    Public Sub addNewList(name As String)
-        Fridge.addGroceryList(name, "A New List")
-        FlowPanel.Controls.Add(New ListBar(Fridge.ListOfLists.Last, Me))
-
-
+    Public Sub AddNewList(name As String)
+        Dim gList As New GroceryList(name, "New List")
+        ListList.Add(gList)
+        FlowPanel.Controls.Add(New ListBar(gList, Me))
     End Sub
 
-    Public Sub setCurrentSavedListPanel(panel As GroceryListPanel)
-        Fridge.setCurrentSavedListPanel(panel)
+    Public Sub ShowSavedList(List As GroceryList)
+        Fridge.ShowList(List, True)
     End Sub
 
     Private Sub ListOfListsPanel_Load(sender As Object, e As EventArgs) Handles Me.Load

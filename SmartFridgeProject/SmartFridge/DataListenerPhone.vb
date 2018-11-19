@@ -1,23 +1,24 @@
 ﻿Imports System.Net
 Imports System.IO
 Imports System.Net.Sockets
+Imports SmartFridge
+
 Public Class DataListenerPhone
+    Implements DataListener
     Private client As TcpClient
     Private stream As NetworkStream
-    Dim PhonePanel As PhoneDisplay
-
-
+    Dim FridgePanel As SmartFridgeDisplay
 
     Delegate Sub _xUpdate(ByVal str As String)
     Sub xUpdate(ByVal str As String)
-        If PhonePanel.InvokeRequired Then
-            PhonePanel.Invoke(New _xUpdate(AddressOf xUpdate), str)
+        If FridgePanel.InvokeRequired Then
+            FridgePanel.Invoke(New _xUpdate(AddressOf xUpdate), str)
         Else
-            PhonePanel.Text = Format(Now, "hh:mm:ss")
+            FridgePanel.Text = Format(Now, "hh:mm:ss")
         End If
     End Sub
 
-    Sub read(ByVal ar As IAsyncResult)
+    Sub read(ByVal ar As IAsyncResult) Implements DataListener.Read
         Try
             xUpdate(New StreamReader(client.GetStream).ReadLine)
             client.GetStream.BeginRead(New Byte() {0}, 0, 0, AddressOf read, Nothing)
@@ -28,11 +29,11 @@ Public Class DataListenerPhone
 
     End Sub
 
-    Public Sub New(form As PhoneDisplay)
-        PhonePanel = form
+    Public Sub FormSet(form As SmartFridgeDisplay) Implements DataListener.formSet
+        FridgePanel = form
     End Sub
 
-    Public Sub Connect(IPAddress As String, PortNumber As Integer)
+    Public Sub Connect(IPAddress As String, PortNumber As Integer) Implements DataListener.Connect
 
         Try
             client = New TcpClient(IPAddress, PortNumber)
@@ -44,8 +45,7 @@ Public Class DataListenerPhone
     End Sub
 
     Dim sWriter As StreamWriter
-
-    Private Sub Send_Click(data As String)
+    Public Sub Send(data As String) Implements DataListener.Send
         Try
             sWriter = New StreamWriter(client.GetStream)
             sWriter.WriteLine(data)
@@ -54,4 +54,11 @@ Public Class DataListenerPhone
             xUpdate("You're not server")
         End Try
     End Sub
+
+
+    Public Event AddData(iInfo As ItemInfo) Implements DataListener.AddData
+    Public Event ChangeList(gList As GroceryList) Implements DataListener.ChangeList
+
+
+
 End Class
