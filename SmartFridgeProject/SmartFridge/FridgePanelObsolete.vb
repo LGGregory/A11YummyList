@@ -33,7 +33,7 @@ Public Class FridgePanelObsolete
     End Sub
 
     Public Sub RemoveItem(ByRef info As ItemInfo)
-        Current.GroceryList.Remove(info)
+        Current.List.Remove(info)
     End Sub
 
     Public Sub New(parent As SmartFridgeDisplay, name As String, text As String)
@@ -82,10 +82,10 @@ Public Class FridgePanelObsolete
 
 
         Dim newList As New GroceryList With {
-            .GroceryList = New List(Of ItemInfo)
+            .List = New List(Of ItemInfo)
         }
 
-        For Each oldItem As ItemInfo In list.GroceryList
+        For Each oldItem As ItemInfo In list.List
             Dim newItem As ItemInfo = oldItem.Clone()
             AddItem(newList, newItem)
         Next

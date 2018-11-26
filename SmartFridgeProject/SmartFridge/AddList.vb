@@ -16,14 +16,21 @@
 
     End Sub
 
-    Public Sub New(ByRef AddList As ListOfListsPanel)
+    Public Sub New(ByRef AddList As ListOfListsPanel, listOrRecipe As Boolean)
 
         ' This call is required by the designer.
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
         ParentList = AddList
-        Me.Text = "Add New Saved List"
+        If listOrRecipe Then
+            Me.Name = "Add List"
+            Me.Text = "Add New Saved List"
+        Else
+            Me.Name = "Add Recipe"
+            Me.Text = "Add New Recipe"
+        End If
+
 
     End Sub
 

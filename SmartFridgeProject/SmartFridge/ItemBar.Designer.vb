@@ -61,7 +61,7 @@ Partial Class ItemBar
         'ItemUnit
         '
         Me.ItemUnit.AutoSize = True
-        Me.ItemUnit.Location = New System.Drawing.Point(24, 17)
+        Me.ItemUnit.Location = New System.Drawing.Point(26, 17)
         Me.ItemUnit.Name = "ItemUnit"
         Me.ItemUnit.Size = New System.Drawing.Size(26, 13)
         Me.ItemUnit.TabIndex = 3
@@ -69,7 +69,7 @@ Partial Class ItemBar
         '
         'UpQuantityButton
         '
-        Me.UpQuantityButton.Location = New System.Drawing.Point(54, 12)
+        Me.UpQuantityButton.Location = New System.Drawing.Point(62, 12)
         Me.UpQuantityButton.Name = "UpQuantityButton"
         Me.UpQuantityButton.Size = New System.Drawing.Size(31, 23)
         Me.UpQuantityButton.TabIndex = 4
@@ -78,7 +78,7 @@ Partial Class ItemBar
         '
         'DownQuantityButton
         '
-        Me.DownQuantityButton.Location = New System.Drawing.Point(91, 12)
+        Me.DownQuantityButton.Location = New System.Drawing.Point(96, 12)
         Me.DownQuantityButton.Name = "DownQuantityButton"
         Me.DownQuantityButton.Size = New System.Drawing.Size(31, 23)
         Me.DownQuantityButton.TabIndex = 5

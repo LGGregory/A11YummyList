@@ -1,5 +1,9 @@
+Imports SmartFridge
+
 Public Class GroceryList
-    Dim List As New List(Of ItemInfo)
+    Implements iListOfItems
+
+    Dim _List As New List(Of ItemInfo)
     Dim ListInfo As String
     Dim ListName As String
     Shared count As Integer = 0
@@ -23,9 +27,6 @@ Public Class GroceryList
             Name = "List " & count
             Text = "Default List Number " & count
             count = count + 1
-
-
-
 
         End If
     End Sub
@@ -55,19 +56,19 @@ Public Class GroceryList
         Return New ItemInfo("Nothing", 0, "Nada")
     End Function
 
-    Public Property GroceryList As List(Of ItemInfo)
+    Public Property List As List(Of ItemInfo) Implements iListOfItems.List
         Get
-            Return List
+            Return _List
         End Get
         Set(value As List(Of ItemInfo))
             If value Is Nothing Then
                 Throw New ArgumentNullException(NameOf(value))
             End If
-            List = value
+            _List = value
         End Set
     End Property
 
-    Public Property Text As String
+    Public Property Text As String Implements iListOfItems.Text
         Get
             Return ListInfo
         End Get
@@ -76,7 +77,7 @@ Public Class GroceryList
         End Set
     End Property
 
-    Public Property Name As String
+    Public Property Name As String Implements iListOfItems.Name
         Get
             Return ListName
         End Get
@@ -85,19 +86,26 @@ Public Class GroceryList
         End Set
     End Property
 
-    Public Sub AddItem(ByRef item As ItemInfo)
+    Public Sub AddItem(item As ItemInfo) Implements iListOfItems.AddItem
         List.Add(item)
     End Sub
 
-    Public Sub RemoveItem(ByRef item As ItemInfo)
+    Public Sub RemoveItem(item As ItemInfo) Implements iListOfItems.RemoveItem
         List.Remove(item)
     End Sub
 
-    Public Sub MatchList(other As GroceryList)
-        Name = other.Name
+
+    Public Sub MatchList(other As iListOfItems) Implements iListOfItems.MatchList
+        MatchList(other, True)
+    End Sub
+
+    Public Sub MatchList(other As iListOfItems, rename As Boolean) Implements iListOfItems.MatchList
+        If rename Then
+            Name = other.Name
+        End If
         Text = other.Text
-        GroceryList = New List(Of ItemInfo)
-        For Each item As ItemInfo In other.GroceryList
+        List = New List(Of ItemInfo)
+        For Each item As ItemInfo In other.List
             AddItem(item.Clone)
         Next
     End Sub

@@ -3,6 +3,7 @@ Imports SmartFridge
 
 Public Class GroceryListPanel
     Implements ContentPanel
+    Dim BoxVis As Boolean = True
     Private LName As String
     Private ItemCount As Integer
     Public Current As GroceryList
@@ -33,7 +34,7 @@ Public Class GroceryListPanel
     End Sub
 
     Public Sub RemoveItem(ByRef info As ItemInfo)
-        Current.GroceryList.Remove(info)
+        Current.List.Remove(info)
     End Sub
 
     Public Sub New(parent As SmartFridgeDisplay, name As String, text As String)
@@ -71,23 +72,23 @@ Public Class GroceryListPanel
     End Sub
 
 
-    Public Sub LoadList(list As GroceryList)
+    Public Sub LoadList(list As iListOfItems)
         UpdatingList = list
         UpdateList(list)
     End Sub
 
-    Public Sub UpdateList(list As GroceryList)
+    Public Sub UpdateList(list As iListOfItems)
 
         FlowPanel.Controls.Clear()
         ListTitle.Text = list.Name
         DetailsBox.Text = list.Text
 
-
+        ' And this is where Liam realized he dun goofed.
         Dim newList As New GroceryList With {
-            .GroceryList = New List(Of ItemInfo)
+            .List = New List(Of ItemInfo)
         }
 
-        For Each oldItem As ItemInfo In list.GroceryList
+        For Each oldItem As ItemInfo In list.List
             Dim newItem As ItemInfo = oldItem.Clone()
             AddItem(newList, newItem)
         Next
@@ -158,6 +159,31 @@ Public Class GroceryListPanel
         EnableSend()
         DetailsBox.Enabled = True
     End Sub
+
+    Private Sub DetailsButton_Click(sender As Object, e As EventArgs) Handles DetailsButton.Click
+        If BoxVis Then
+            ShrinkDetailsAction()
+        Else
+            ExpandDetailsAction()
+        End If
+    End Sub
+
+    Public Sub ExpandDetailsAction()
+        Dim height As Integer = DetailsBox.Height
+        FlowPanel.Height -= height
+        DetailsBox.Show()
+        BoxVis = True
+    End Sub
+
+    Public Sub ShrinkDetailsAction()
+        Dim height As Integer = DetailsBox.Height
+        DetailsBox.Hide()
+        FlowPanel.Height += height
+        BoxVis = False
+
+
+    End Sub
+
 
     'Private Sub DetailsButton_Click(sender As Object, e As EventArgs) Handles DetailsButton.Click
     'End Sub

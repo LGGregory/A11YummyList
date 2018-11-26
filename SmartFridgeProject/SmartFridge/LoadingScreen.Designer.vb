@@ -64,7 +64,7 @@ Partial Class LoadingScreen
         Me.IPBox.Name = "IPBox"
         Me.IPBox.Size = New System.Drawing.Size(100, 20)
         Me.IPBox.TabIndex = 3
-        Me.IPBox.Text = "108.162.155.44"
+        Me.IPBox.Text = "127.0.0.1"
         '
         'PortBox
         '

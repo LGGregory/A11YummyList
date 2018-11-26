@@ -25,6 +25,7 @@ Partial Class AddList
         Me.ItemName = New System.Windows.Forms.TextBox()
         Me.CancelAddButton = New System.Windows.Forms.Button()
         Me.ConfirmAddButton = New System.Windows.Forms.Button()
+        Me.Keyboard1 = New SmartFridge.Keyboard()
         Me.SuspendLayout()
         '
         'ItemName
@@ -52,11 +53,19 @@ Partial Class AddList
         Me.ConfirmAddButton.Text = "Add"
         Me.ConfirmAddButton.UseVisualStyleBackColor = True
         '
+        'Keyboard1
+        '
+        Me.Keyboard1.Location = New System.Drawing.Point(5, 183)
+        Me.Keyboard1.Name = "Keyboard1"
+        Me.Keyboard1.Size = New System.Drawing.Size(354, 137)
+        Me.Keyboard1.TabIndex = 6
+        '
         'AddList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(364, 191)
+        Me.ClientSize = New System.Drawing.Size(364, 321)
+        Me.Controls.Add(Me.Keyboard1)
         Me.Controls.Add(Me.CancelAddButton)
         Me.Controls.Add(Me.ConfirmAddButton)
         Me.Controls.Add(Me.ItemName)
@@ -70,4 +79,5 @@ Partial Class AddList
     Friend WithEvents ItemName As TextBox
     Friend WithEvents CancelAddButton As Button
     Friend WithEvents ConfirmAddButton As Button
+    Friend WithEvents Keyboard1 As Keyboard
 End Class

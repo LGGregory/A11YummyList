@@ -29,6 +29,7 @@ Partial Class GroceryListPanel
         Me.AddItemButton = New System.Windows.Forms.Button()
         Me.DetailsBox = New System.Windows.Forms.RichTextBox()
         Me.SendToPhoneButton = New System.Windows.Forms.Button()
+        Me.DetailsButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'ListTitle
@@ -43,6 +44,7 @@ Partial Class GroceryListPanel
         '
         'FlowPanel
         '
+        Me.FlowPanel.AutoScroll = True
         Me.FlowPanel.Location = New System.Drawing.Point(0, 64)
         Me.FlowPanel.Name = "FlowPanel"
         Me.FlowPanel.Size = New System.Drawing.Size(465, 391)
@@ -50,7 +52,7 @@ Partial Class GroceryListPanel
         '
         'CancelChanges
         '
-        Me.CancelChanges.Location = New System.Drawing.Point(135, 650)
+        Me.CancelChanges.Location = New System.Drawing.Point(201, 650)
         Me.CancelChanges.Name = "CancelChanges"
         Me.CancelChanges.Size = New System.Drawing.Size(75, 23)
         Me.CancelChanges.TabIndex = 6
@@ -59,7 +61,7 @@ Partial Class GroceryListPanel
         '
         'ApplyChangesButton
         '
-        Me.ApplyChangesButton.Location = New System.Drawing.Point(255, 650)
+        Me.ApplyChangesButton.Location = New System.Drawing.Point(288, 650)
         Me.ApplyChangesButton.Name = "ApplyChangesButton"
         Me.ApplyChangesButton.Size = New System.Drawing.Size(75, 23)
         Me.ApplyChangesButton.TabIndex = 7
@@ -85,18 +87,28 @@ Partial Class GroceryListPanel
         '
         'SendToPhoneButton
         '
-        Me.SendToPhoneButton.Location = New System.Drawing.Point(15, 650)
+        Me.SendToPhoneButton.Location = New System.Drawing.Point(102, 650)
         Me.SendToPhoneButton.Name = "SendToPhoneButton"
         Me.SendToPhoneButton.Size = New System.Drawing.Size(87, 23)
         Me.SendToPhoneButton.TabIndex = 10
         Me.SendToPhoneButton.Text = "Send to Phone"
         Me.SendToPhoneButton.UseVisualStyleBackColor = True
         '
+        'DetailsButton
+        '
+        Me.DetailsButton.Location = New System.Drawing.Point(15, 650)
+        Me.DetailsButton.Name = "DetailsButton"
+        Me.DetailsButton.Size = New System.Drawing.Size(75, 23)
+        Me.DetailsButton.TabIndex = 11
+        Me.DetailsButton.Text = "Details"
+        Me.DetailsButton.UseVisualStyleBackColor = True
+        '
         'GroceryListPanel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.DetailsButton)
         Me.Controls.Add(Me.SendToPhoneButton)
         Me.Controls.Add(Me.DetailsBox)
         Me.Controls.Add(Me.AddItemButton)
@@ -117,4 +129,5 @@ Partial Class GroceryListPanel
     Friend WithEvents AddItemButton As Button
     Friend WithEvents DetailsBox As RichTextBox
     Friend WithEvents SendToPhoneButton As Button
+    Friend WithEvents DetailsButton As Button
 End Class

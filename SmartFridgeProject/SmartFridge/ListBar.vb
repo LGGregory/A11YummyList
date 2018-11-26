@@ -1,9 +1,9 @@
 ﻿Public Class ListBar
-    Public List As GroceryList
+    Public List As iListOfItems
     Dim Panel As ListOfListsPanel
 
 
-    Public Sub New(list As GroceryList, ByRef panel As ListOfListsPanel)
+    Public Sub New(list As iListOfItems, ByRef panel As ListOfListsPanel)
 
         ' This call is required by the designer.
         InitializeComponent()

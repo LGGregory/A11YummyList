@@ -27,6 +27,7 @@ Partial Class AddItemForm
         Me.ItemName = New System.Windows.Forms.TextBox()
         Me.Quantity = New System.Windows.Forms.TextBox()
         Me.UnitList = New System.Windows.Forms.ComboBox()
+        Me.Keyboard1 = New SmartFridge.Keyboard()
         Me.SuspendLayout()
         '
         'ConfirmAddButton
@@ -60,21 +61,31 @@ Partial Class AddItemForm
         Me.Quantity.Name = "Quantity"
         Me.Quantity.Size = New System.Drawing.Size(54, 20)
         Me.Quantity.TabIndex = 3
+        Me.Quantity.Text = "1"
         '
         'UnitList
         '
         Me.UnitList.FormattingEnabled = True
-        Me.UnitList.Items.AddRange(New Object() {"Ct", "Grams", "Lbs", "Pieces", "Thingies"})
+        Me.UnitList.Items.AddRange(New Object() {"Ct", "Grams", "Kg", "Lbs", "Pieces", "Thingies"})
         Me.UnitList.Location = New System.Drawing.Point(279, 90)
         Me.UnitList.Name = "UnitList"
         Me.UnitList.Size = New System.Drawing.Size(61, 21)
         Me.UnitList.TabIndex = 4
+        Me.UnitList.Text = "Ct"
+        '
+        'Keyboard1
+        '
+        Me.Keyboard1.Location = New System.Drawing.Point(5, 183)
+        Me.Keyboard1.Name = "Keyboard1"
+        Me.Keyboard1.Size = New System.Drawing.Size(354, 137)
+        Me.Keyboard1.TabIndex = 5
         '
         'AddItemForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(364, 191)
+        Me.ClientSize = New System.Drawing.Size(364, 321)
+        Me.Controls.Add(Me.Keyboard1)
         Me.Controls.Add(Me.UnitList)
         Me.Controls.Add(Me.Quantity)
         Me.Controls.Add(Me.ItemName)
@@ -92,4 +103,5 @@ Partial Class AddItemForm
     Friend WithEvents ItemName As TextBox
     Friend WithEvents Quantity As TextBox
     Friend WithEvents UnitList As ComboBox
+    Friend WithEvents Keyboard1 As Keyboard
 End Class

@@ -1,7 +1,7 @@
 ﻿Public Class SidePanel
     Dim Fridge As SmartFridgeDisplay = Nothing
-    Public ExpandedWidth As Integer = 380
-    Public ShrunkWidth As Integer = 70
+    Public ExpandedWidth As Integer = 365
+    Public ShrunkWidth As Integer = 60
 
     Dim ExpandedBoolean As Boolean = True
 
@@ -15,20 +15,26 @@
 
     ' Shrinking the SidePanel
     Private Sub BurgerShrink_Click(sender As Object, e As EventArgs) Handles BurgerShrink.Click
-
         BurgerShrinkAction()
-
     End Sub
 
     ' Expanding the SidePanel
     Private Sub BurgerExpand_Click(sender As Object, e As EventArgs) Handles BurgerExpand.Click
+        BurgerExpandAction()
+    End Sub
+
+
+    Private Sub BurgerExpandAction()
         If Not Fridge Is Nothing Then
             Fridge.DimPanel()
         End If
 
         BurgerExpand.Visible = False
         BurgerShrink.Visible = True
+        SlideOpenButton.Visible = False
+        SlideCloseButton.Visible = True
         MenuPanel.Visible = True
+
         Do While Width < ExpandedWidth
             Width = Width + 5
         Loop
@@ -42,6 +48,8 @@
 
         BurgerShrink.Visible = False
         BurgerExpand.Visible = True
+        SlideOpenButton.Visible = True
+        SlideCloseButton.Visible = False
         MenuPanel.Visible = False
         Do While Width > ShrunkWidth
             Width = Width - 5
@@ -73,8 +81,7 @@
     Private Sub RecipesButton_Click(sender As Object, e As EventArgs) Handles RecipesButton.Click
 
         Fridge.CurrentListPanel.HideFridge()
-        Fridge.CurrentListPanel.LoadList(Fridge.BaseList)
-        Fridge.ShowList(Fridge.BaseList, False)
+        Fridge.showRecipesPanel()
         BurgerShrinkAction()
         'TODO : currently returns to home page
     End Sub
@@ -86,4 +93,12 @@
 
         BurgerShrinkAction()
     End Sub
+
+    Private Sub SlideOpenButton_Click(sender As Object, e As EventArgs) Handles SlideOpenButton.Click
+        BurgerExpandAction()
+    End Sub
+    Private Sub SlideCloseButton_Click(sender As Object, e As EventArgs) Handles SlideCloseButton.Click
+        BurgerShrinkAction()
+    End Sub
+
 End Class

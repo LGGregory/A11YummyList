@@ -1,11 +1,15 @@
 Imports Newtonsoft.Json
+Imports SmartFridge
+
 Public Class SmartFridgeDisplay
     Public CurrentListPanel As GroceryListPanel
     Public SavedListsPanel As ListOfListsPanel
-    Public CurrentList As GroceryList
+    Public SavedRecipesPanel As ListOfListsPanel
+    Public CurrentList As iListOfItems
     Public BaseList As GroceryList
     Public FridgeContents As GroceryList
     Public ListOfGLists As New List(Of GroceryList)
+    Public ListOfRLists As New List(Of GroceryList) ' NYI: Recipe list as different
     Public dataListener As DataListener
     Public TopBar As TopBar
     Public NoBar As New Point(92, 0)
@@ -55,12 +59,18 @@ Public Class SmartFridgeDisplay
         FridgeContents.AddItem(New ItemInfo("Kosher Sandwich Pickles", 20, "ct"))
         FridgeContents.AddItem(New ItemInfo("Cucumbers in Brine", 6, "kg"))
 
-        SavedListsPanel = New ListOfListsPanel(Me)
+        SavedListsPanel = New ListOfListsPanel(Me, True)
         Me.Controls.Add(SavedListsPanel)
         SavedListsPanel.Location = NoBar
         SavedListsPanel.Hide()
 
-        CurrentList = New GroceryList("Default List", " ", False)
+        SavedRecipesPanel = New ListOfListsPanel(Me, False)
+        Me.Controls.Add(SavedRecipesPanel)
+        SavedRecipesPanel.Location = NoBar
+        SavedRecipesPanel.Hide()
+
+
+        CurrentList = New GroceryList("Current List", " ", False)
         CurrentList.AddItem(New ItemInfo("Cream Cheese", 1, "lbs"))
         BaseList = CurrentList
 
@@ -101,7 +111,17 @@ Public Class SmartFridgeDisplay
         GL4.AddItem(New ItemInfo("Sibling Rivalry White 2009", 2, "ct"))
         addGroceryList(GL4)
 
+        Dim RL1 As New GroceryList("Steak", "Grill till done." & vbNewLine & "Probably with less salt", False)
+        RL1.AddItem(New ItemInfo("Grilling Steak", 1, "ct"))
+        RL1.AddItem(New ItemInfo("Salt", 1, "Kg"))
+        addRecipeList(RL1)
 
+        Dim RL2 As New GroceryList("Mozzarella Pickles", "1. Heat oil in wok" & vbNewLine & "2. Grate cheese" & vbNewLine & "3. Cover pickles in cheese" & vbNewLine & "4. Immerse pickes in oil for 2 min" & vbNewLine & "5. Serve immediately with sauce of choice.", False)
+        RL2.AddItem(New ItemInfo("Dill Pickles", 20, "ct"))
+        RL2.AddItem(New ItemInfo("Mozzarella Cheese", 1, "lbs"))
+        RL2.AddItem(New ItemInfo("BBQ sauce", 1, "Kg"))
+        RL2.AddItem(New ItemInfo("Vegetable Oil", 1, "L"))
+        addRecipeList(RL2)
 
         TopBar = New TopBar(Me)
         Me.Controls.Add(TopBar)
@@ -109,6 +129,13 @@ Public Class SmartFridgeDisplay
         TopBar.Hide()
 
 
+    End Sub
+
+
+
+    Private Sub addRecipeList(rList As iListOfItems)
+        ListOfRLists.Add(rList)
+        SavedRecipesPanel.AddNewList(rList)
     End Sub
 
     Public Sub addGroceryList(name As String, about As String)
@@ -121,11 +148,10 @@ Public Class SmartFridgeDisplay
     Public Sub addGroceryList(gList As GroceryList)
         ListOfGLists.Add(gList)
         SavedListsPanel.AddNewList(gList)
-
     End Sub
 
-    Public Sub AddToSavedList(list As GroceryList)
-        For Each item As ItemInfo In list.GroceryList
+    Public Sub AddToSavedList(list As iListOfItems)
+        For Each item As ItemInfo In list.List
             If BaseList.hasSameItemByName(item) Then
                 BaseList.getSameItemByName(item).Quantity += item.Quantity
             Else
@@ -134,23 +160,33 @@ Public Class SmartFridgeDisplay
         Next
     End Sub
 
-    Public Sub CopyToCurrentList(list As GroceryList)
-        BaseList = list
+    Public Sub CopyToCurrentList(list As iListOfItems)
+        BaseList.MatchList(list, False)
+
     End Sub
 
     Public Sub showSavedListsPanel()
         CurrentListPanel.Hide()
         SavedListsPanel.Show()
+        SavedRecipesPanel.Hide()
+        TopBar.Hide()
+    End Sub
+
+    Friend Sub showRecipesPanel()
+        CurrentListPanel.Hide()
+        SavedRecipesPanel.Show()
         TopBar.Hide()
     End Sub
 
     Public Sub showCurrentListPanel()
+        SavedRecipesPanel.Hide()
         SavedListsPanel.Hide()
         TopBar.Hide()
         CurrentListPanel.Show()
     End Sub
 
-    Public Sub ShowList(list As GroceryList, bar As Boolean)
+    Public Sub ShowList(list As iListOfItems, bar As Boolean)
+        SavedRecipesPanel.Hide()
         SavedListsPanel.Hide()
         CurrentList = list
         CurrentListPanel.LoadList(list)
@@ -162,6 +198,13 @@ Public Class SmartFridgeDisplay
             CurrentListPanel.Location = NoBar
         End If
         CurrentListPanel.Show()
+    End Sub
+
+    Public Sub ShowRecipe(recipe As Recipe)
+        SavedListsPanel.Hide()
+        SavedRecipesPanel.Show()
+        TopBar.Hide()
+
     End Sub
 
     Public Sub DimPanel()
