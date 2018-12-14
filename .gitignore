@@ -6,12 +6,4 @@
 *.ide-shm
 *.ide-wal
 */SmartFridge.vbproj.FileListAbsolute.txt
-SmartFridgeProject/SmartFridge/obj/Debug/SmartFridge.vbproj.GenerateResource.Cache
-SmartFridgeProject/SmartFridge/obj/Debug/SmartFridge.vbproj.GenerateResource.Cache
-SmartFridgeProject/SmartFridge/obj/Debug/SmartFridge.vbproj.GenerateResource.Cache
-SmartFridgeProject/SmartFridge/obj/Debug/SmartFridge.exe
-SmartFridgeProject/SmartFridge/obj/Debug/SmartFridge.pdb
-*.exe
-*.pdb
-SmartFridgeProject/.vs/SmartFridgeProject/v15/Server/sqlite3/storage.ide-shm
-SmartFridgeProject/.vs/SmartFridgeProject/v15/Server/sqlite3/storage.ide-wal
+
