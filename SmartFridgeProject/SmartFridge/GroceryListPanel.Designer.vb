@@ -65,7 +65,7 @@ Partial Class GroceryListPanel
         Me.ApplyChangesButton.Name = "ApplyChangesButton"
         Me.ApplyChangesButton.Size = New System.Drawing.Size(75, 23)
         Me.ApplyChangesButton.TabIndex = 7
-        Me.ApplyChangesButton.Text = "Update"
+        Me.ApplyChangesButton.Text = "Save"
         Me.ApplyChangesButton.UseVisualStyleBackColor = True
         '
         'AddItemButton

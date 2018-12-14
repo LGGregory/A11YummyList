@@ -14,7 +14,7 @@ Public Class SmartFridgeDisplay
     Public TopBar As TopBar
     Public NoBar As New Point(92, 0)
     Public WiBar As New Point(92, 40)
-    Public Bot As New Point(465, 670)
+    Public Bot As New Point(465, 680)
 
     Public FridgeOrPhone As Boolean
 

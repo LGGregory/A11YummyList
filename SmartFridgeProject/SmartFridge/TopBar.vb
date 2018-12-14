@@ -8,8 +8,8 @@
 
         ' Add any initialization after the InitializeComponent() call.
         Fridge = parent
-        ToolTip1.SetToolTip(AddButton, "Add contents to shopping list")
-        ToolTip1.SetToolTip(CopyButton, "Replace shopping list with this one")
+        ToolTip1.SetToolTip(AddButton, "Add contents to current shopping list")
+        ToolTip1.SetToolTip(CopyButton, "Replace current shopping list with this list")
 
     End Sub
 
