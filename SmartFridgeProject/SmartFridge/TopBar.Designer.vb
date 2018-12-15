@@ -26,6 +26,7 @@ Partial Class TopBar
         Me.CopyButton = New System.Windows.Forms.Button()
         Me.AddButton = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ButtonAddRecipe = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'CopyButton
@@ -46,14 +47,21 @@ Partial Class TopBar
         Me.AddButton.Text = "Add to List"
         Me.AddButton.UseVisualStyleBackColor = True
         '
-        'ToolTip1
+        'ButtonAddRecipe
         '
+        Me.ButtonAddRecipe.Location = New System.Drawing.Point(313, 1)
+        Me.ButtonAddRecipe.Name = "ButtonAddRecipe"
+        Me.ButtonAddRecipe.Size = New System.Drawing.Size(78, 38)
+        Me.ButtonAddRecipe.TabIndex = 2
+        Me.ButtonAddRecipe.Text = "Add Needed"
+        Me.ButtonAddRecipe.UseVisualStyleBackColor = True
         '
         'TopBar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Highlight
+        Me.Controls.Add(Me.ButtonAddRecipe)
         Me.Controls.Add(Me.AddButton)
         Me.Controls.Add(Me.CopyButton)
         Me.Name = "TopBar"
@@ -65,4 +73,5 @@ Partial Class TopBar
     Friend WithEvents CopyButton As Button
     Friend WithEvents AddButton As Button
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents ButtonAddRecipe As Button
 End Class

@@ -54,7 +54,7 @@
     End Sub
 
     Public Sub ShowSavedList(List As iListOfItems)
-        Fridge.ShowList(List, True)
+        Fridge.ShowList(List, True, Not ListOrRecipe)
     End Sub
 
 End Class

@@ -51,6 +51,8 @@ Public Class SmartFridgeDisplay
 
     End Sub
 
+
+
     Private Sub SmartFridgeDisplay_Load(sender As Object, e As EventArgs) Handles Me.Load
 
         FridgeContents = New GroceryList("Fridge", "The contents of the fridge." & vbNewLine & "Why do you have so many pickles?", False)
@@ -150,6 +152,23 @@ Public Class SmartFridgeDisplay
         SavedListsPanel.AddNewList(gList)
     End Sub
 
+    Friend Sub AddRecipeToList(list As iListOfItems)
+        For Each item As ItemInfo In list.List
+            If FridgeContents.hasSameItemByName(item) Then
+                If BaseList.hasSameItemByName(item) Then
+                    If item.Quantity > BaseList.getSameItemByName(item).Quantity + FridgeContents.getSameItemByName(item).Quantity Then
+                        BaseList.getSameItemByName(item).Quantity = item.Quantity
+                    End If
+                Else
+                    item.Quantity -= FridgeContents.getSameItemByName(item).Quantity
+                    BaseList.AddItem(item)
+                End If
+            Else
+                BaseList.AddItem(item)
+            End If
+        Next
+    End Sub
+
     Public Sub AddToSavedList(list As iListOfItems)
         For Each item As ItemInfo In list.List
             If BaseList.hasSameItemByName(item) Then
@@ -185,12 +204,17 @@ Public Class SmartFridgeDisplay
         CurrentListPanel.Show()
     End Sub
 
-    Public Sub ShowList(list As iListOfItems, bar As Boolean)
+    Public Sub ShowList(list As iListOfItems, bar As Boolean, recipes As Boolean)
         SavedRecipesPanel.Hide()
         SavedListsPanel.Hide()
         CurrentList = list
         CurrentListPanel.LoadList(list)
         If bar Then
+            If recipes Then
+                TopBar.RecipeMode()
+            Else
+                TopBar.SavedMode()
+            End If
             TopBar.Show()
             CurrentListPanel.Location = WiBar
         Else

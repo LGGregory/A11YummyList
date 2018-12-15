@@ -91,3 +91,12 @@ C:\Users\Ridge\Documents\Ryerson\CPS613\A11YummyList\SmartFridgeProject\SmartFri
 C:\Users\Ridge\Documents\Ryerson\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.exe
 C:\Users\Ridge\Documents\Ryerson\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.xml
 C:\Users\Ridge\Documents\Ryerson\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.pdb
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\bin\Debug\Newtonsoft.Json.dll
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\bin\Debug\Newtonsoft.Json.xml
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.vbprojAssemblyReference.cache
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.FridgePanelObsolete.resources
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.PhoneDisplay.resources
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.LoadingScreen.resources
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.ServerForm.resources
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.Keyboard.resources
+D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.vbproj.CopyComplete

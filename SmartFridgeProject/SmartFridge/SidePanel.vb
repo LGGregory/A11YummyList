@@ -65,7 +65,7 @@
     Private Sub CurrentListButton_Click(sender As Object, e As EventArgs) Handles CurrentListButton.Click
         Fridge.CurrentListPanel.HideFridge()
         Fridge.CurrentListPanel.LoadList(Fridge.BaseList)
-        Fridge.ShowList(Fridge.BaseList, False)
+        Fridge.ShowList(Fridge.BaseList, False, False)
         BurgerShrinkAction()
     End Sub
 
@@ -88,7 +88,7 @@
 
     ' Switch to Fridge Contents List
     Private Sub FridgeContentsButton_Click(sender As Object, e As EventArgs) Handles FridgeContentsButton.Click
-        Fridge.ShowList(Fridge.FridgeContents, False)
+        Fridge.ShowList(Fridge.FridgeContents, False, False)
         Fridge.CurrentListPanel.ShowFridge()
 
         BurgerShrinkAction()
