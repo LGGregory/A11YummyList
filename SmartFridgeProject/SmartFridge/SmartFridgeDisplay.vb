@@ -157,14 +157,20 @@ Public Class SmartFridgeDisplay
             If FridgeContents.hasSameItemByName(item) Then
                 If BaseList.hasSameItemByName(item) Then
                     If item.Quantity > BaseList.getSameItemByName(item).Quantity + FridgeContents.getSameItemByName(item).Quantity Then
-                        BaseList.getSameItemByName(item).Quantity = item.Quantity
+                        BaseList.getSameItemByName(item).Quantity = item.Quantity - FridgeContents.getSameItemByName(item).Quantity
                     End If
                 Else
                     item.Quantity -= FridgeContents.getSameItemByName(item).Quantity
                     BaseList.AddItem(item)
                 End If
             Else
-                BaseList.AddItem(item)
+                If BaseList.hasSameItemByName(item) Then
+                    If item.Quantity > BaseList.getSameItemByName(item).Quantity Then
+                        BaseList.getSameItemByName(item).Quantity = item.Quantity
+                    End If
+                Else
+                    BaseList.AddItem(item)
+                End If
             End If
         Next
     End Sub
