@@ -2,6 +2,7 @@
 
 
     Public ItemName As String
+    Public ItemUnit As String
     Public ParentItemPanel As AllItemsPanel
 
     Public Sub New()
@@ -11,8 +12,12 @@
 
         ' Add any initialization after the InitializeComponent() call.
         ItemName = "Blank"
+        ItemUnit = "Units"
         EditBox1.Hide()
         NameLabel.Text = ItemName
+        DeleteButton.Hide()
+        EditBox.Hide()
+
     End Sub
 
     Public Sub New(name As String)
@@ -22,8 +27,25 @@
 
         ' Add any initialization after the InitializeComponent() call.
         ItemName = name
+        ItemUnit = "Units"
         EditBox1.Hide()
         NameLabel.Text = ItemName
+        DeleteButton.Hide()
+        EditBox.Hide()
+    End Sub
+
+    Public Sub New(name As String, unit As String)
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        ItemName = name
+        ItemUnit = unit
+        EditBox1.Hide()
+        NameLabel.Text = ItemName
+        DeleteButton.Hide()
+        EditBox.Hide()
     End Sub
 
     Dim EditingMode As Boolean = False
@@ -53,4 +75,8 @@
 
     End Sub
 
+    Private Sub NameLabel_Click(sender As Object, e As EventArgs) Handles NameLabel.Click
+        ParentItemPanel.AddItem(New ItemInfo(ItemName, 1, ItemUnit))
+
+    End Sub
 End Class

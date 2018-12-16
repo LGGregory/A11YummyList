@@ -75,13 +75,14 @@ Partial Class AllItemsPanel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Controls.Add(Me.FlowPanel)
         Me.Controls.Add(Me.Keyboard1)
         Me.Controls.Add(Me.SearchBox)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ListTitle)
         Me.Name = "AllItemsPanel"
-        Me.Size = New System.Drawing.Size(363, 460)
+        Me.Size = New System.Drawing.Size(359, 456)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

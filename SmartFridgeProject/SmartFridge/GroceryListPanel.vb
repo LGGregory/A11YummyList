@@ -101,8 +101,9 @@ Public Class GroceryListPanel
     End Sub
 
     Private Sub AddItemButton_Click(sender As Object, e As EventArgs) Handles AddItemButton.Click
-        Dim f As New AddItemForm(Me)
-        f.Show()
+        Fridge.AddItem()
+        ' Dim f As New AddItemForm(Me)
+        ' f.Show()
     End Sub
 
     Public Sub ListChanged() Implements ContentPanel.ListChanged
@@ -182,6 +183,14 @@ Public Class GroceryListPanel
         BoxVis = False
 
 
+    End Sub
+
+    Public Sub EchoDim()
+        DetailsBox.BackColor = System.Drawing.Color.Silver
+    End Sub
+
+    Public Sub EchoUnDim()
+        DetailsBox.BackColor = System.Drawing.Color.White
     End Sub
 
 

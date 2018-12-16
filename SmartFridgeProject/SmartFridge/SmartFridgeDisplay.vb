@@ -19,7 +19,7 @@ Public Class SmartFridgeDisplay
     Public BaseList As GroceryList
     Public FridgeContents As GroceryList
     Public ListOfGLists As New List(Of GroceryList)
-    Public ListOfRLists As New List(Of GroceryList) ' NYI: Recipe list as different
+    Public ListOfRLists As New List(Of GroceryList)
     Public dataListener As DataListener
     Public TopBar As TopBar
     Public NoBar As New Point(92, 0)
@@ -74,6 +74,8 @@ Public Class SmartFridgeDisplay
         FridgeContents.AddItem(New ItemInfo("Cucumbers in Brine", 6, "kg"))
 
         ItemsPanel = New AllItemsPanel()
+        ItemsPanel.Fridge = Me
+        ItemsPanel.BackColor = System.Drawing.Color.White
         Me.Controls.Add(ItemsPanel)
         ItemsPanel.Location = New Point(100, 60)
         ItemsPanel.Hide()
@@ -147,10 +149,19 @@ Public Class SmartFridgeDisplay
         TopBar.Location = New Point(5, 0)
         TopBar.Hide()
 
-        ItemsPanel.Show() ' TODO get rid of this
+        ItemsPanel.Hide()
     End Sub
 
+    Public Sub AddItem()
+        Me.DimPanel()
+        ItemsPanel.Show()
+    End Sub
 
+    Public Sub ReturnItem(item As ItemInfo)
+        CurrentListPanel.AddItem(CurrentListPanel.Current, item)
+        Me.UnDimPanel()
+        ItemsPanel.Hide()
+    End Sub
 
     Private Sub addRecipeList(rList As iListOfItems)
         ListOfRLists.Add(rList)
@@ -261,12 +272,14 @@ Public Class SmartFridgeDisplay
         Me.BackColor = System.Drawing.Color.Silver
         CurrentListPanel.BackColor = System.Drawing.Color.Silver
         SavedListsPanel.BackColor = System.Drawing.Color.Silver
+        CurrentListPanel.EchoDim()
     End Sub
 
     Public Sub UnDimPanel()
         Me.BackColor = System.Drawing.Color.White
         CurrentListPanel.BackColor = System.Drawing.Color.White
         SavedListsPanel.BackColor = System.Drawing.Color.White
+        CurrentListPanel.EchoUnDim()
     End Sub
 
 

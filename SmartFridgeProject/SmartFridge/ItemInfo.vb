@@ -2,6 +2,7 @@
 
 Public Class ItemInfo
     Implements ICloneable
+    Implements IComparable
 
     Public Name As String
     Public Quantity As Integer
@@ -53,5 +54,10 @@ Public Class ItemInfo
 
     Private Function ICloneable_Clone() As Object Implements ICloneable.Clone
         Throw New NotImplementedException()
+    End Function
+
+    Public Function CompareTo(ByVal obj As Object) As Integer Implements IComparable.CompareTo
+        Dim other As ItemInfo = CType(obj, ItemInfo)
+        Return Name.CompareTo(other.Name)
     End Function
 End Class

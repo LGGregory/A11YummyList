@@ -1,16 +1,22 @@
 ﻿Public Class AllItemsPanel
     Dim Items As New AllItems()
+    Public Fridge As SmartFridgeDisplay
+
     Private Sub AllItemsPanel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SetBox(Items.GetAllItems)
 
         HideKeyboard()
     End Sub
 
-    Private Sub SetBox(list As List(Of String))
+    Public Sub AddItem(item As ItemInfo)
+        Fridge.ReturnItem(item)
+    End Sub
+
+    Private Sub SetBox(list As List(Of ItemInfo))
         FlowPanel.Controls.Clear()
 
-        For Each word As String In list
-            Dim sib As New SmallItemBar(word) With {
+        For Each item As ItemInfo In list
+            Dim sib As New SmallItemBar(item.Name, item.Unit) With {
                 .ParentItemPanel = Me
             }
             FlowPanel.Controls.Add(sib)
