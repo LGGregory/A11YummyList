@@ -30,7 +30,7 @@ Partial Class SmartFridgeDisplay
         Me.SidePanel1.BackColor = System.Drawing.Color.RoyalBlue
         Me.SidePanel1.Location = New System.Drawing.Point(0, 0)
         Me.SidePanel1.Name = "SidePanel1"
-        Me.SidePanel1.Size = New System.Drawing.Size(70, 710)
+        Me.SidePanel1.Size = New System.Drawing.Size(60, 710)
         Me.SidePanel1.TabIndex = 0
         '
         'SmartFridgeDisplay

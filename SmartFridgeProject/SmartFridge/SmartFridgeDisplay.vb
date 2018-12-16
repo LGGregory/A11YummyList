@@ -2,6 +2,16 @@ Imports Newtonsoft.Json
 Imports SmartFridge
 
 Public Class SmartFridgeDisplay
+    ' TODO Resizing
+    ' TODO Replace Add Item with AllItemsPanel showing - note temp showing of allitemspanel overtop everything - see below
+    ' TODO Shopping interface
+    ' TODO stocking the fridge after shopping - server stuff? yeah, sending json fun
+
+
+
+
+
+
     Public CurrentListPanel As GroceryListPanel
     Public SavedListsPanel As ListOfListsPanel
     Public SavedRecipesPanel As ListOfListsPanel
@@ -15,6 +25,8 @@ Public Class SmartFridgeDisplay
     Public NoBar As New Point(92, 0)
     Public WiBar As New Point(92, 40)
     Public Bot As New Point(465, 680)
+
+    Public ItemsPanel As AllItemsPanel
 
     Public FridgeOrPhone As Boolean
 
@@ -60,6 +72,11 @@ Public Class SmartFridgeDisplay
         FridgeContents.AddItem(New ItemInfo("Dill Pickles", 320, "ct"))
         FridgeContents.AddItem(New ItemInfo("Kosher Sandwich Pickles", 20, "ct"))
         FridgeContents.AddItem(New ItemInfo("Cucumbers in Brine", 6, "kg"))
+
+        ItemsPanel = New AllItemsPanel()
+        Me.Controls.Add(ItemsPanel)
+        ItemsPanel.Location = New Point(100, 60)
+        ItemsPanel.Hide()
 
         SavedListsPanel = New ListOfListsPanel(Me, True)
         Me.Controls.Add(SavedListsPanel)
@@ -130,7 +147,7 @@ Public Class SmartFridgeDisplay
         TopBar.Location = New Point(5, 0)
         TopBar.Hide()
 
-
+        ItemsPanel.Show() ' TODO get rid of this
     End Sub
 
 
@@ -194,13 +211,14 @@ Public Class SmartFridgeDisplay
 
     Public Sub showSavedListsPanel()
         CurrentListPanel.Hide()
-        SavedListsPanel.Show()
         SavedRecipesPanel.Hide()
+        SavedListsPanel.Show()
         TopBar.Hide()
     End Sub
 
     Friend Sub showRecipesPanel()
         CurrentListPanel.Hide()
+        SavedListsPanel.Hide()
         SavedRecipesPanel.Show()
         TopBar.Hide()
     End Sub

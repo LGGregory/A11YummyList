@@ -27,6 +27,11 @@ SmartFridge
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:SmartFridge.My.Resources.Resources.Edit">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:SmartFridge.My.Resources.Resources.Hambuger">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

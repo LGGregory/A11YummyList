@@ -79,8 +79,8 @@
 
     ' Switch to Recipe Display
     Private Sub RecipesButton_Click(sender As Object, e As EventArgs) Handles RecipesButton.Click
-
         Fridge.CurrentListPanel.HideFridge()
+
         Fridge.showRecipesPanel()
         BurgerShrinkAction()
         'TODO : currently returns to home page

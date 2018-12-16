@@ -92,6 +92,13 @@
     <Compile Include="AddList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AllItems.vb" />
+    <Compile Include="AllItemsPanel.Designer.vb">
+      <DependentUpon>AllItemsPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AllItemsPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ClientClass.vb" />
     <Compile Include="ContentPanel.vb" />
     <Compile Include="DataListener.vb" />
@@ -141,6 +148,12 @@
       <DependentUpon>SidePanel.vb</DependentUpon>
     </Compile>
     <Compile Include="SidePanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SmallItemBar.Designer.vb">
+      <DependentUpon>SmallItemBar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SmallItemBar.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="SmartFridgeDisplay.vb">
@@ -197,6 +210,9 @@
     <EmbeddedResource Include="AddList.resx">
       <DependentUpon>AddList.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AllItemsPanel.resx">
+      <DependentUpon>AllItemsPanel.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FridgePanelObsolete.resx">
       <DependentUpon>FridgePanelObsolete.vb</DependentUpon>
     </EmbeddedResource>
@@ -227,6 +243,9 @@
     <EmbeddedResource Include="SidePanel.resx">
       <DependentUpon>SidePanel.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SmallItemBar.resx">
+      <DependentUpon>SmallItemBar.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SmartFridgeDisplay.resx">
       <DependentUpon>SmartFridgeDisplay.vb</DependentUpon>
     </EmbeddedResource>
@@ -254,6 +273,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Edit.png" />
     <Content Include="Hambuger.png" />
     <None Include="Resources\OpenTriangle.png" />
     <None Include="Resources\CloseTriangle.png" />
