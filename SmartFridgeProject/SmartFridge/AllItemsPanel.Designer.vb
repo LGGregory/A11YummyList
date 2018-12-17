@@ -33,7 +33,7 @@ Partial Class AllItemsPanel
         '
         Me.ListTitle.AutoSize = True
         Me.ListTitle.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListTitle.Location = New System.Drawing.Point(120, 9)
+        Me.ListTitle.Location = New System.Drawing.Point(114, 4)
         Me.ListTitle.Name = "ListTitle"
         Me.ListTitle.Size = New System.Drawing.Size(131, 32)
         Me.ListTitle.TabIndex = 4
@@ -43,7 +43,7 @@ Partial Class AllItemsPanel
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(45, 77)
+        Me.Label1.Location = New System.Drawing.Point(45, 58)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(75, 24)
         Me.Label1.TabIndex = 5
@@ -52,21 +52,22 @@ Partial Class AllItemsPanel
         'SearchBox
         '
         Me.SearchBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SearchBox.Location = New System.Drawing.Point(126, 74)
+        Me.SearchBox.Location = New System.Drawing.Point(126, 55)
         Me.SearchBox.Name = "SearchBox"
         Me.SearchBox.Size = New System.Drawing.Size(191, 29)
         Me.SearchBox.TabIndex = 6
         '
         'FlowPanel
         '
-        Me.FlowPanel.Location = New System.Drawing.Point(26, 109)
+        Me.FlowPanel.AutoScroll = True
+        Me.FlowPanel.Location = New System.Drawing.Point(4, 90)
         Me.FlowPanel.Name = "FlowPanel"
-        Me.FlowPanel.Size = New System.Drawing.Size(310, 205)
+        Me.FlowPanel.Size = New System.Drawing.Size(352, 205)
         Me.FlowPanel.TabIndex = 8
         '
         'Keyboard1
         '
-        Me.Keyboard1.Location = New System.Drawing.Point(4, 320)
+        Me.Keyboard1.Location = New System.Drawing.Point(4, 301)
         Me.Keyboard1.Name = "Keyboard1"
         Me.Keyboard1.Size = New System.Drawing.Size(354, 137)
         Me.Keyboard1.TabIndex = 7
@@ -82,7 +83,7 @@ Partial Class AllItemsPanel
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ListTitle)
         Me.Name = "AllItemsPanel"
-        Me.Size = New System.Drawing.Size(359, 456)
+        Me.Size = New System.Drawing.Size(359, 436)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

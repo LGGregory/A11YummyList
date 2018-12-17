@@ -12,7 +12,7 @@
         CopyButton.Hide()
         Me.List = list
         Me.Panel = panel
-
+        Me.List.Bar = Me
         UpdateInfo()
 
     End Sub
@@ -25,7 +25,7 @@
         'Panel.FlowPanel.Controls.Add(New ListBar(List, Panel))
     End Sub
 
-    Private Sub UpdateInfo()
+    Public Sub UpdateInfo()
         ItemName.Text = List.Name
     End Sub
 

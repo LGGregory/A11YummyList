@@ -111,6 +111,12 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="iListOfItems.vb" />
+    <Compile Include="NewItemBar.Designer.vb">
+      <DependentUpon>NewItemBar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewItemBar.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="PhoneDisplay.Designer.vb">
       <DependentUpon>PhoneDisplay.vb</DependentUpon>
     </Compile>
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FridgePanelObsolete.resx">
       <DependentUpon>FridgePanelObsolete.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewItemBar.resx">
+      <DependentUpon>NewItemBar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PhoneDisplay.resx">
       <DependentUpon>PhoneDisplay.vb</DependentUpon>

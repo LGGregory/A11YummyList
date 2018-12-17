@@ -49,14 +49,22 @@ Public Class AllItems
         Return OutList
     End Function
 
-    Public Sub EditItem(oldName As String, newName As String)
-        ' Words.Remove(oldName)
-        ' Words.Add(newName)
-        ' Words.Sort()
+    Friend Sub Remove(itemName As String)
+        For Each item As ItemInfo In Words
+            If item.Name = itemName Then
+                Words.Remove(item)
+            End If
+        Next
     End Sub
 
-    Public Sub DeleteItem(name As String)
-        ' Words.Remove(name)
+    Public Sub EditItem(oldName As String, newName As String)
+        'Words.Remove(oldName)
+        'Words.Add(newName)
+        'Words.Sort()
+    End Sub
+
+    Public Sub DeleteItem(item As ItemInfo)
+        Words.Remove(item)
     End Sub
 
 End Class

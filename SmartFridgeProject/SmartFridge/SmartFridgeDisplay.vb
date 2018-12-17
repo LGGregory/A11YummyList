@@ -87,6 +87,7 @@ Public Class SmartFridgeDisplay
 
         SavedRecipesPanel = New ListOfListsPanel(Me, False)
         Me.Controls.Add(SavedRecipesPanel)
+        SavedRecipesPanel.PanelTitle.Text = "Saved Recipes"
         SavedRecipesPanel.Location = NoBar
         SavedRecipesPanel.Hide()
 
@@ -154,11 +155,12 @@ Public Class SmartFridgeDisplay
 
     Public Sub AddItem()
         Me.DimPanel()
+        ItemsPanel.Restart()
         ItemsPanel.Show()
     End Sub
 
     Public Sub ReturnItem(item As ItemInfo)
-        CurrentListPanel.AddItem(CurrentListPanel.Current, item)
+        CurrentListPanel.AddItem(CurrentListPanel.Current, item.Clone()) 'TODO you scared me bruh
         Me.UnDimPanel()
         ItemsPanel.Hide()
     End Sub

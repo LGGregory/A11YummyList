@@ -1,6 +1,5 @@
 ﻿Public Class SmallItemBar
 
-
     Public ItemName As String
     Public ItemUnit As String
     Public ParentItemPanel As AllItemsPanel
@@ -11,12 +10,10 @@
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-        ItemName = "Blank"
+        ItemName = "New Item"
         ItemUnit = "Units"
-        EditBox1.Hide()
         NameLabel.Text = ItemName
-        DeleteButton.Hide()
-        EditBox.Hide()
+        EditNameBox.Hide()
 
     End Sub
 
@@ -28,10 +25,8 @@
         ' Add any initialization after the InitializeComponent() call.
         ItemName = name
         ItemUnit = "Units"
-        EditBox1.Hide()
         NameLabel.Text = ItemName
-        DeleteButton.Hide()
-        EditBox.Hide()
+        EditNameBox.Hide()
     End Sub
 
     Public Sub New(name As String, unit As String)
@@ -42,32 +37,35 @@
         ' Add any initialization after the InitializeComponent() call.
         ItemName = name
         ItemUnit = unit
-        EditBox1.Hide()
+        EditNameBox.Hide()
         NameLabel.Text = ItemName
-        DeleteButton.Hide()
-        EditBox.Hide()
+
     End Sub
 
     Dim EditingMode As Boolean = False
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles EditBox.Click
+    Private Sub EditBox_Click(sender As Object, e As EventArgs) Handles EditBox.Click
         ' TODO Edit Mode - Replace the label with textbox, let it be modified, then turn it back into a label
+        StartEditing()
+        ' TODO talk to keyboard? Done key? Look in keyboard definition
+    End Sub
+
+    Public Sub StartEditing()
         If EditingMode Then
-            If Not EditBox1.Text.Trim = "" Then
+            If Not EditNameBox.Text.Trim = "" Then
                 EditingMode = False
-                ItemName = EditBox1.Text
+                ItemName = EditNameBox.Text
                 NameLabel.Text = ItemName
-                EditBox1.Hide()
+                EditNameBox.Hide()
                 NameLabel.Show()
             End If
         Else
             EditingMode = True
             NameLabel.Hide()
-            EditBox1.Text = NameLabel.Text
-            EditBox1.Show()
+            EditNameBox.Text = NameLabel.Text
+            EditNameBox.Show()
+            EditNameBox.Focus()
         End If
-
-        ' TODO talk to keyboard? Done key? Look in keyboard definition
     End Sub
 
     Private Sub DeleteButton_Click(sender As Object, e As EventArgs) Handles DeleteButton.Click
@@ -79,4 +77,5 @@
         ParentItemPanel.AddItem(New ItemInfo(ItemName, 1, ItemUnit))
 
     End Sub
+
 End Class

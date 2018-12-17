@@ -9,6 +9,7 @@ Public Class GroceryListPanel
     Public Current As GroceryList
     Public UpdatingList As GroceryList
     Public Fridge As SmartFridgeDisplay
+    Dim DetailsShowing As Boolean = True
 
     Private Property ContentPanel_FlowPanel As FlowLayoutPanel Implements ContentPanel.FlowPanel
         Get
@@ -112,11 +113,13 @@ Public Class GroceryListPanel
         CancelChanges.Show()
         ApplyChangesButton.Show()
 
+
     End Sub
 
     Public Sub ApplyChanges()
         UpdatingList.MatchList(Current)
         LoadList(UpdatingList)
+
     End Sub
 
     Private Sub DetailsBox_TextChanged(sender As Object, e As EventArgs) Handles DetailsBox.TextChanged
@@ -191,6 +194,45 @@ Public Class GroceryListPanel
 
     Public Sub EchoUnDim()
         DetailsBox.BackColor = System.Drawing.Color.White
+    End Sub
+
+    Dim EditingMode As Boolean = False
+
+    Private Sub EditBox_Click(sender As Object, e As EventArgs) Handles EditBox.Click
+        Editing()
+    End Sub
+
+
+    Public Sub Editing()
+        If EditingMode Then
+            If Not EditNameBox.Text.Trim = "" Then
+                EditingMode = False
+                If Not Current.Name = EditNameBox.Text Then
+                    Current.Name = EditNameBox.Text
+                    ListTitle.Text = Current.Name
+                    UpdatingList.Name = Current.Name
+                    If Not UpdatingList.Bar Is Nothing Then
+                        UpdatingList.Bar.UpdateInfo()
+                    End If
+
+                End If
+                EditNameBox.Hide()
+                ListTitle.Show()
+                If DetailsShowing Then
+                    DetailsBox.Show()
+                End If
+                Keyboard1.Hide()
+            End If
+        Else
+
+            EditingMode = True
+            ListTitle.Hide()
+            DetailsBox.Hide()
+            Keyboard1.Show()
+            EditNameBox.Text = ListTitle.Text
+            EditNameBox.Show()
+            EditNameBox.Focus()
+        End If
     End Sub
 
 

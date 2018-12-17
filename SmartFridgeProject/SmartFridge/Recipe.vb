@@ -15,6 +15,16 @@ Public Class Recipe
         Me.Text = inst
     End Sub
 
+    Dim _Bar As ListBar = Nothing
+    Public Property Bar As ListBar Implements iListOfItems.Bar
+        Get
+            Return _Bar
+        End Get
+        Set(value As ListBar)
+            _Bar = value
+        End Set
+    End Property
+
 
     Public Property Text As String Implements iListOfItems.Text
         Get
@@ -58,6 +68,10 @@ Public Class Recipe
     Public Sub MatchList(other As iListOfItems, rename As Boolean) Implements iListOfItems.MatchList
         If rename Then
             Name = other.Name
+        End If
+        'Bar = other.Bar 'duh
+        If Not Bar Is Nothing Then
+            Bar.UpdateInfo()
         End If
         Text = other.Text
         List = New List(Of ItemInfo)

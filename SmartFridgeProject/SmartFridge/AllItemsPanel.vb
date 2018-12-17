@@ -1,6 +1,7 @@
 ﻿Public Class AllItemsPanel
     Dim Items As New AllItems()
     Public Fridge As SmartFridgeDisplay
+    Public NIB As New NewItemBar(Me)
 
     Private Sub AllItemsPanel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SetBox(Items.GetAllItems)
@@ -12,6 +13,11 @@
         Fridge.ReturnItem(item)
     End Sub
 
+    Public Sub Restart()
+        SearchBox.Text = ""
+        HideKeyboard()
+    End Sub
+
     Private Sub SetBox(list As List(Of ItemInfo))
         FlowPanel.Controls.Clear()
 
@@ -21,7 +27,20 @@
             }
             FlowPanel.Controls.Add(sib)
         Next
-        ' TODO Check this
+        FlowPanel.Controls.Add(NIB)
+    End Sub
+
+    Friend Sub NewItem()
+        Dim sib As New SmallItemBar() With {
+                .ParentItemPanel = Me
+            }
+        sib.StartEditing()
+        FlowPanel.Controls.Remove(NIB)
+        FlowPanel.Controls.Add(sib)
+        FlowPanel.Controls.Add(NIB)
+        sib.ItemUnit = "ct"
+
+        sib.EditNameBox.Focus()
     End Sub
 
     Public Sub HideKeyboard()
@@ -49,10 +68,12 @@
     End Sub
 
     Friend Sub DeleteItem(sib As SmallItemBar)
-        Items.DeleteItem(sib.ItemName)
+        FlowPanel.Controls.Remove(sib)
+        Items.Remove(sib.ItemName)
     End Sub
 
     Private Sub Keyboard1_Load(sender As Object, e As EventArgs) Handles Keyboard1.Load
         Keyboard1.FormParent = Me
     End Sub
+
 End Class

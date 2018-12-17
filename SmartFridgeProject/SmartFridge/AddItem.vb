@@ -24,12 +24,6 @@
 
     End Sub
 
-
-    Private Sub ItemName_TextChanged(sender As Object, e As EventArgs) Handles ItemName.TextChanged
-        ' TODO autocomplete?
-
-    End Sub
-
     Private Sub CancelAddButton_Click(sender As Object, e As EventArgs) Handles CancelAddButton.Click
         Close()
     End Sub

@@ -104,3 +104,4 @@ C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\D
 C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.SmallItemBar.resources
 D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.AllItemsPanel.resources
 D:\Documents\Ryerson\Fall 2018\CPS613\A11YummyList\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.SmallItemBar.resources
+C:\Users\Samwise210\OneDrive\CPS613\Project\SmartFridgeProject\SmartFridge\obj\Debug\SmartFridge.NewItemBar.resources

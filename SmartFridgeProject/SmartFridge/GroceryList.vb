@@ -86,6 +86,16 @@ Public Class GroceryList
         End Set
     End Property
 
+    Dim _Bar As ListBar = Nothing
+    Public Property Bar As ListBar Implements iListOfItems.Bar
+        Get
+            Return _Bar
+        End Get
+        Set(value As ListBar)
+            _Bar = value
+        End Set
+    End Property
+
     Public Sub AddItem(item As ItemInfo) Implements iListOfItems.AddItem
         List.Add(item)
     End Sub
@@ -102,6 +112,11 @@ Public Class GroceryList
     Public Sub MatchList(other As iListOfItems, rename As Boolean) Implements iListOfItems.MatchList
         If rename Then
             Name = other.Name
+        End If
+
+        '        Bar = other.Bar
+        If Not Bar Is Nothing Then
+            Bar.UpdateInfo()
         End If
         Text = other.Text
         List = New List(Of ItemInfo)
