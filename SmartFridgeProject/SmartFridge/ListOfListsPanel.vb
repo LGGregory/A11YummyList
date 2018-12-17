@@ -4,6 +4,11 @@
     Public ListList As New List(Of iListOfItems)
 
     Private Sub AddListButton_Click(sender As Object, e As EventArgs) Handles AddListButton.Click
+        If ListOrRecipe Then
+
+
+
+        End If
         Dim f As New AddList(Me, ListOrRecipe)
         f.Show()
     End Sub

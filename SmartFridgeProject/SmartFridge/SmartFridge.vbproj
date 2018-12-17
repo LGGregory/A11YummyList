@@ -283,6 +283,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Edit.png" />
+    <None Include="addItem.png" />
+    <None Include="addItemdim.png" />
     <Content Include="Hambuger.png" />
     <None Include="Resources\OpenTriangle.png" />
     <None Include="Resources\CloseTriangle.png" />

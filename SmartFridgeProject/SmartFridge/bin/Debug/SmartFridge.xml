@@ -22,6 +22,16 @@ SmartFridge
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:SmartFridge.My.Resources.Resources.addItem">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:SmartFridge.My.Resources.Resources.addItemdim">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:SmartFridge.My.Resources.Resources.CloseTriangle">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

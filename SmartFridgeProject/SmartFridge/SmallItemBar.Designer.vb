@@ -32,16 +32,16 @@ Partial Class SmallItemBar
         'NameLabel
         '
         Me.NameLabel.AutoSize = True
-        Me.NameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.NameLabel.Location = New System.Drawing.Point(14, 11)
         Me.NameLabel.Name = "NameLabel"
-        Me.NameLabel.Size = New System.Drawing.Size(0, 25)
+        Me.NameLabel.Size = New System.Drawing.Size(0, 24)
         Me.NameLabel.TabIndex = 0
         '
         'DeleteButton
         '
         Me.DeleteButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DeleteButton.Location = New System.Drawing.Point(257, 7)
+        Me.DeleteButton.Location = New System.Drawing.Point(286, 6)
         Me.DeleteButton.Name = "DeleteButton"
         Me.DeleteButton.Size = New System.Drawing.Size(32, 32)
         Me.DeleteButton.TabIndex = 1
@@ -50,16 +50,16 @@ Partial Class SmallItemBar
         '
         'EditNameBox
         '
-        Me.EditNameBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EditNameBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.EditNameBox.Location = New System.Drawing.Point(14, 9)
         Me.EditNameBox.Name = "EditNameBox"
-        Me.EditNameBox.Size = New System.Drawing.Size(199, 31)
+        Me.EditNameBox.Size = New System.Drawing.Size(228, 29)
         Me.EditNameBox.TabIndex = 3
         '
         'EditBox
         '
         Me.EditBox.Image = Global.SmartFridge.My.Resources.Resources.Edit
-        Me.EditBox.Location = New System.Drawing.Point(219, 7)
+        Me.EditBox.Location = New System.Drawing.Point(248, 6)
         Me.EditBox.Name = "EditBox"
         Me.EditBox.Size = New System.Drawing.Size(32, 32)
         Me.EditBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -75,7 +75,7 @@ Partial Class SmallItemBar
         Me.Controls.Add(Me.DeleteButton)
         Me.Controls.Add(Me.NameLabel)
         Me.Name = "SmallItemBar"
-        Me.Size = New System.Drawing.Size(292, 48)
+        Me.Size = New System.Drawing.Size(322, 42)
         CType(Me.EditBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -26,13 +26,14 @@ Partial Class GroceryListPanel
         Me.FlowPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.CancelChanges = New System.Windows.Forms.Button()
         Me.ApplyChangesButton = New System.Windows.Forms.Button()
-        Me.AddItemButton = New System.Windows.Forms.Button()
         Me.DetailsBox = New System.Windows.Forms.RichTextBox()
         Me.SendToPhoneButton = New System.Windows.Forms.Button()
         Me.DetailsButton = New System.Windows.Forms.Button()
-        Me.EditBox = New System.Windows.Forms.PictureBox()
         Me.EditNameBox = New System.Windows.Forms.TextBox()
         Me.Keyboard1 = New SmartFridge.Keyboard()
+        Me.AddItemButton = New System.Windows.Forms.PictureBox()
+        Me.EditBox = New System.Windows.Forms.PictureBox()
+        CType(Me.AddItemButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EditBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -72,20 +73,11 @@ Partial Class GroceryListPanel
         Me.ApplyChangesButton.Text = "Save"
         Me.ApplyChangesButton.UseVisualStyleBackColor = True
         '
-        'AddItemButton
-        '
-        Me.AddItemButton.Location = New System.Drawing.Point(375, 650)
-        Me.AddItemButton.Name = "AddItemButton"
-        Me.AddItemButton.Size = New System.Drawing.Size(75, 23)
-        Me.AddItemButton.TabIndex = 8
-        Me.AddItemButton.Text = "Add Item"
-        Me.AddItemButton.UseVisualStyleBackColor = True
-        '
         'DetailsBox
         '
         Me.DetailsBox.Location = New System.Drawing.Point(15, 461)
         Me.DetailsBox.Name = "DetailsBox"
-        Me.DetailsBox.Size = New System.Drawing.Size(435, 183)
+        Me.DetailsBox.Size = New System.Drawing.Size(435, 154)
         Me.DetailsBox.TabIndex = 9
         Me.DetailsBox.Text = ""
         '
@@ -107,16 +99,6 @@ Partial Class GroceryListPanel
         Me.DetailsButton.Text = "Details"
         Me.DetailsButton.UseVisualStyleBackColor = True
         '
-        'EditBox
-        '
-        Me.EditBox.Image = Global.SmartFridge.My.Resources.Resources.Edit
-        Me.EditBox.Location = New System.Drawing.Point(418, 13)
-        Me.EditBox.Name = "EditBox"
-        Me.EditBox.Size = New System.Drawing.Size(32, 32)
-        Me.EditBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.EditBox.TabIndex = 12
-        Me.EditBox.TabStop = False
-        '
         'EditNameBox
         '
         Me.EditNameBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -134,24 +116,45 @@ Partial Class GroceryListPanel
         Me.Keyboard1.TabIndex = 0
         Me.Keyboard1.Visible = False
         '
+        'AddItemButton
+        '
+        Me.AddItemButton.Image = Global.SmartFridge.My.Resources.Resources.addItem
+        Me.AddItemButton.Location = New System.Drawing.Point(379, 621)
+        Me.AddItemButton.Name = "AddItemButton"
+        Me.AddItemButton.Size = New System.Drawing.Size(71, 71)
+        Me.AddItemButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.AddItemButton.TabIndex = 14
+        Me.AddItemButton.TabStop = False
+        '
+        'EditBox
+        '
+        Me.EditBox.Image = Global.SmartFridge.My.Resources.Resources.Edit
+        Me.EditBox.Location = New System.Drawing.Point(418, 13)
+        Me.EditBox.Name = "EditBox"
+        Me.EditBox.Size = New System.Drawing.Size(32, 32)
+        Me.EditBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.EditBox.TabIndex = 12
+        Me.EditBox.TabStop = False
+        '
         'GroceryListPanel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.AddItemButton)
         Me.Controls.Add(Me.Keyboard1)
         Me.Controls.Add(Me.EditNameBox)
         Me.Controls.Add(Me.EditBox)
         Me.Controls.Add(Me.DetailsButton)
         Me.Controls.Add(Me.SendToPhoneButton)
         Me.Controls.Add(Me.DetailsBox)
-        Me.Controls.Add(Me.AddItemButton)
         Me.Controls.Add(Me.ApplyChangesButton)
         Me.Controls.Add(Me.CancelChanges)
         Me.Controls.Add(Me.FlowPanel)
         Me.Controls.Add(Me.ListTitle)
         Me.Name = "GroceryListPanel"
         Me.Size = New System.Drawing.Size(465, 710)
+        CType(Me.AddItemButton, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EditBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -161,11 +164,11 @@ Partial Class GroceryListPanel
     Friend WithEvents FlowPanel As FlowLayoutPanel
     Friend WithEvents CancelChanges As Button
     Friend WithEvents ApplyChangesButton As Button
-    Friend WithEvents AddItemButton As Button
     Friend WithEvents DetailsBox As RichTextBox
     Friend WithEvents SendToPhoneButton As Button
     Friend WithEvents DetailsButton As Button
     Friend WithEvents EditBox As PictureBox
     Friend WithEvents EditNameBox As TextBox
     Friend WithEvents Keyboard1 As Keyboard
+    Friend WithEvents AddItemButton As PictureBox
 End Class

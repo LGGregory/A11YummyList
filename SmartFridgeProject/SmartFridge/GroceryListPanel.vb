@@ -189,10 +189,12 @@ Public Class GroceryListPanel
     End Sub
 
     Public Sub EchoDim()
+        AddItemButton.Image = My.Resources.addItemdim
         DetailsBox.BackColor = System.Drawing.Color.Silver
     End Sub
 
     Public Sub EchoUnDim()
+        AddItemButton.Image = My.Resources.addItem
         DetailsBox.BackColor = System.Drawing.Color.White
     End Sub
 
