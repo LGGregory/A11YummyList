@@ -18,8 +18,9 @@ Public Class DataListenerPhone
             Try
                 Dim aJson As ActionJson
                 aJson = JsonConvert.DeserializeObject(Of ActionJson)(str)
-                If aJson.Action = "update" Then
+                If aJson.Action = "updatelist" Then
                     FridgePanel.CurrentListPanel.LoadList(aJson.List)
+
                 End If
             Catch ex As Exception
             End Try

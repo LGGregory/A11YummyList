@@ -72,6 +72,10 @@
         Items.Remove(sib.ItemName)
     End Sub
 
+    Public Sub AddItem(sib As SmallItemBar)
+        Items.AddItem(New ItemInfo(sib.ItemName, 0, sib.ItemUnit))
+
+    End Sub
     Private Sub Keyboard1_Load(sender As Object, e As EventArgs) Handles Keyboard1.Load
         Keyboard1.FormParent = Me
     End Sub

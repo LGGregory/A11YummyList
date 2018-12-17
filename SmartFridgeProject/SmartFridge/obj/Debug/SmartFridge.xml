@@ -42,7 +42,12 @@ SmartFridge
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:SmartFridge.My.Resources.Resources.Cart">
+<member name="P:SmartFridge.My.Resources.Resources.buyAll">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:SmartFridge.My.Resources.Resources.buyOne">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -63,6 +68,16 @@ SmartFridge
 </summary>
 </member>
 <member name="P:SmartFridge.My.Resources.Resources.OpenTriangle">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:SmartFridge.My.Resources.Resources.save">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:SmartFridge.My.Resources.Resources.Undo_button">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

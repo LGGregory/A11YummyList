@@ -28,6 +28,10 @@ Partial Class ItemBar
         Me.ItemUnit = New System.Windows.Forms.Label()
         Me.UpQuantityButton = New System.Windows.Forms.Button()
         Me.DownQuantityButton = New System.Windows.Forms.Button()
+        Me.BuyAll = New System.Windows.Forms.PictureBox()
+        Me.BuyOne = New System.Windows.Forms.PictureBox()
+        CType(Me.BuyAll, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BuyOne, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RemoveItem
@@ -42,10 +46,10 @@ Partial Class ItemBar
         'ItemName
         '
         Me.ItemName.AutoSize = True
-        Me.ItemName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ItemName.Location = New System.Drawing.Point(137, 14)
+        Me.ItemName.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ItemName.Location = New System.Drawing.Point(127, 7)
         Me.ItemName.Name = "ItemName"
-        Me.ItemName.Size = New System.Drawing.Size(57, 20)
+        Me.ItemName.Size = New System.Drawing.Size(95, 31)
         Me.ItemName.TabIndex = 1
         Me.ItemName.Text = "Label1"
         '
@@ -78,17 +82,41 @@ Partial Class ItemBar
         '
         'DownQuantityButton
         '
-        Me.DownQuantityButton.Location = New System.Drawing.Point(96, 12)
+        Me.DownQuantityButton.Location = New System.Drawing.Point(99, 12)
         Me.DownQuantityButton.Name = "DownQuantityButton"
         Me.DownQuantityButton.Size = New System.Drawing.Size(31, 23)
         Me.DownQuantityButton.TabIndex = 5
         Me.DownQuantityButton.Text = "-"
         Me.DownQuantityButton.UseVisualStyleBackColor = True
         '
+        'BuyAll
+        '
+        Me.BuyAll.Image = Global.SmartFridge.My.Resources.Resources.buyAll
+        Me.BuyAll.Location = New System.Drawing.Point(384, 0)
+        Me.BuyAll.Name = "BuyAll"
+        Me.BuyAll.Size = New System.Drawing.Size(51, 47)
+        Me.BuyAll.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BuyAll.TabIndex = 7
+        Me.BuyAll.TabStop = False
+        Me.BuyAll.Visible = False
+        '
+        'BuyOne
+        '
+        Me.BuyOne.Image = Global.SmartFridge.My.Resources.Resources.buyOne
+        Me.BuyOne.Location = New System.Drawing.Point(331, -1)
+        Me.BuyOne.Name = "BuyOne"
+        Me.BuyOne.Size = New System.Drawing.Size(51, 47)
+        Me.BuyOne.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BuyOne.TabIndex = 6
+        Me.BuyOne.TabStop = False
+        Me.BuyOne.Visible = False
+        '
         'ItemBar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.BuyAll)
+        Me.Controls.Add(Me.BuyOne)
         Me.Controls.Add(Me.DownQuantityButton)
         Me.Controls.Add(Me.UpQuantityButton)
         Me.Controls.Add(Me.ItemUnit)
@@ -97,6 +125,8 @@ Partial Class ItemBar
         Me.Controls.Add(Me.RemoveItem)
         Me.Name = "ItemBar"
         Me.Size = New System.Drawing.Size(435, 46)
+        CType(Me.BuyAll, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BuyOne, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -108,4 +138,6 @@ Partial Class ItemBar
     Friend WithEvents ItemUnit As Label
     Friend WithEvents UpQuantityButton As Button
     Friend WithEvents DownQuantityButton As Button
+    Friend WithEvents BuyOne As PictureBox
+    Friend WithEvents BuyAll As PictureBox
 End Class

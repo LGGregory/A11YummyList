@@ -282,12 +282,16 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="save.png" />
+    <None Include="Undo-button.png" />
     <None Include="Resources\AddNeeded.png" />
     <None Include="Resources\AddAll.png" />
     <None Include="Edit.png" />
     <None Include="addItem.png" />
     <None Include="addItemdim.png" />
     <None Include="Cart.png" />
+    <None Include="buyOne.png" />
+    <None Include="buyAll.png" />
     <Content Include="Hambuger.png" />
     <None Include="Resources\OpenTriangle.png" />
     <None Include="Resources\CloseTriangle.png" />

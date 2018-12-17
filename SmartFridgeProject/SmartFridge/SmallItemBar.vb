@@ -58,6 +58,7 @@
                 NameLabel.Text = ItemName
                 EditNameBox.Hide()
                 NameLabel.Show()
+                ParentItemPanel.AddItem(Me)
             End If
         Else
             EditingMode = True

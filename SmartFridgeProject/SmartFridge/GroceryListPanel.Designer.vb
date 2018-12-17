@@ -57,7 +57,7 @@ Partial Class GroceryListPanel
         '
         'CancelChanges
         '
-        Me.CancelChanges.Location = New System.Drawing.Point(201, 650)
+        Me.CancelChanges.Location = New System.Drawing.Point(201, 607)
         Me.CancelChanges.Name = "CancelChanges"
         Me.CancelChanges.Size = New System.Drawing.Size(75, 23)
         Me.CancelChanges.TabIndex = 6
@@ -66,7 +66,7 @@ Partial Class GroceryListPanel
         '
         'ApplyChangesButton
         '
-        Me.ApplyChangesButton.Location = New System.Drawing.Point(288, 650)
+        Me.ApplyChangesButton.Location = New System.Drawing.Point(288, 607)
         Me.ApplyChangesButton.Name = "ApplyChangesButton"
         Me.ApplyChangesButton.Size = New System.Drawing.Size(75, 23)
         Me.ApplyChangesButton.TabIndex = 7
@@ -75,15 +75,16 @@ Partial Class GroceryListPanel
         '
         'DetailsBox
         '
+        Me.DetailsBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DetailsBox.Location = New System.Drawing.Point(15, 461)
         Me.DetailsBox.Name = "DetailsBox"
-        Me.DetailsBox.Size = New System.Drawing.Size(435, 154)
+        Me.DetailsBox.Size = New System.Drawing.Size(435, 137)
         Me.DetailsBox.TabIndex = 9
         Me.DetailsBox.Text = ""
         '
         'SendToPhoneButton
         '
-        Me.SendToPhoneButton.Location = New System.Drawing.Point(102, 650)
+        Me.SendToPhoneButton.Location = New System.Drawing.Point(102, 607)
         Me.SendToPhoneButton.Name = "SendToPhoneButton"
         Me.SendToPhoneButton.Size = New System.Drawing.Size(87, 23)
         Me.SendToPhoneButton.TabIndex = 10
@@ -92,7 +93,7 @@ Partial Class GroceryListPanel
         '
         'DetailsButton
         '
-        Me.DetailsButton.Location = New System.Drawing.Point(15, 650)
+        Me.DetailsButton.Location = New System.Drawing.Point(15, 607)
         Me.DetailsButton.Name = "DetailsButton"
         Me.DetailsButton.Size = New System.Drawing.Size(75, 23)
         Me.DetailsButton.TabIndex = 11
@@ -119,7 +120,7 @@ Partial Class GroceryListPanel
         'AddItemButton
         '
         Me.AddItemButton.Image = Global.SmartFridge.My.Resources.Resources.addItem
-        Me.AddItemButton.Location = New System.Drawing.Point(379, 621)
+        Me.AddItemButton.Location = New System.Drawing.Point(379, 604)
         Me.AddItemButton.Name = "AddItemButton"
         Me.AddItemButton.Size = New System.Drawing.Size(71, 71)
         Me.AddItemButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom

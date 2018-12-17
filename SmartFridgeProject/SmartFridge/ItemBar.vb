@@ -16,6 +16,8 @@
 
     End Sub
 
+
+
     Public Sub New(info As ItemInfo, ByRef list As ContentPanel)
 
         ' This call is required by the designer.
@@ -28,6 +30,17 @@
 
         UpdateInfo()
 
+    End Sub
+
+    Public Sub New(info As ItemInfo, ByRef list As ContentPanel, onPhone As Boolean)
+        Me.New(info, list)
+        If onPhone Then
+            RemoveItem.Hide()
+            BuyOne.Show()
+            BuyAll.Show()
+
+
+        End If
     End Sub
 
     Public Sub DeleteItem()
@@ -67,4 +80,14 @@
 
     End Sub
 
+    Private Sub BuyOne_Click(sender As Object, e As EventArgs) Handles BuyOne.Click
+        List.SendToFridge(Info, False)
+        DownQuantityButton_Click(sender, e)
+    End Sub
+
+    Private Sub BuyAll_Click(sender As Object, e As EventArgs) Handles BuyAll.Click
+        List.SendToFridge(Info, True)
+        DeleteItem()
+
+    End Sub
 End Class

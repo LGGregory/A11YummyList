@@ -4,6 +4,7 @@ Public Class AllItems
     Dim Words As New List(Of ItemInfo)
 
     Public Sub New()
+        Words.Add(New ItemInfo("Red Peppers", 0, "ct"))
         Words.Add(New ItemInfo("Apples", 0, "ct"))
         Words.Add(New ItemInfo("Apple Juice", 0, "Litres"))
         Words.Add(New ItemInfo("BBQ Sauce", 0, "ct"))
@@ -20,7 +21,7 @@ Public Class AllItems
         Words.Add(New ItemInfo("Bacon", 0, "KG"))
         Words.Add(New ItemInfo("Broccoli", 0, "ct"))
         Words.Add(New ItemInfo("Mushrooms", 0, "LBs"))
-        Words.Add(New ItemInfo("Red Peppers", 0, "ct"))
+
         Words.Add(New ItemInfo("Brussels Sprouts", 0, "KG"))
         Words.Add(New ItemInfo("Cucumbers", 0, "ct"))
         Words.Add(New ItemInfo("Chips", 0, "ct"))
@@ -62,6 +63,19 @@ Public Class AllItems
         'Words.Remove(oldName)
         'Words.Add(newName)
         'Words.Sort()
+    End Sub
+
+    Public Sub AddItem(newitem As ItemInfo)
+        Dim b As Boolean = True
+        For Each item As ItemInfo In Words
+            If item.Name = newitem.Name Then
+                b = False
+            End If
+        Next
+        If b Then
+            Words.Add(newitem)
+            Words.Sort()
+        End If
     End Sub
 
     Public Sub DeleteItem(item As ItemInfo)

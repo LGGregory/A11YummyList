@@ -29,7 +29,7 @@ Public Class FridgePanelObsolete
 
     Public Sub AddItem(list As GroceryList, ByVal info As ItemInfo) Implements ContentPanel.AddItem
         list.AddItem(info)
-        FlowPanel.Controls.Add(New ItemBar(info, Me))
+        FlowPanel.Controls.Add(New ItemBar(info, Me, Not Fridge.FridgeOrPhone))
     End Sub
 
     Public Sub RemoveItem(ByRef info As ItemInfo)

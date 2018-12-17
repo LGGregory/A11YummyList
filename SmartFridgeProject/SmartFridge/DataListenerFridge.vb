@@ -15,9 +15,21 @@ Public Class DataListenerFridge
         If FridgePanel.InvokeRequired Then
             FridgePanel.Invoke(New _xUpdate(AddressOf xUpdate), str)
         Else
+            Try
+                Dim aJson As ActionJson
+                aJson = JsonConvert.DeserializeObject(Of ActionJson)(str)
+                If aJson.Action = "updatefridge" Then
+                    If FridgePanel.CurrentListPanel.UpdatingList Is FridgePanel.FridgeContents Then
+                        FridgePanel.FridgeContents.AddItem(aJson.Item)
+                        FridgePanel.CurrentListPanel.LoadList(FridgePanel.FridgeContents)
+                    Else
+                        FridgePanel.FridgeContents.AddItem(aJson.Item)
+                    End If
 
 
-
+                End If
+            Catch ex As Exception
+            End Try
         End If
     End Sub
 

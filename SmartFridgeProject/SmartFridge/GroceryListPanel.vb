@@ -31,7 +31,7 @@ Public Class GroceryListPanel
 
     Public Sub AddItem(list As GroceryList, ByVal info As ItemInfo) Implements ContentPanel.AddItem
         list.AddItem(info)
-        FlowPanel.Controls.Add(New ItemBar(info, Me))
+        FlowPanel.Controls.Add(New ItemBar(info, Me, Not Fridge.FridgeOrPhone))
     End Sub
 
     Public Sub RemoveItem(ByRef info As ItemInfo)
@@ -47,7 +47,7 @@ Public Class GroceryListPanel
         ListTitle.Text = name
 
         Current = New GroceryList
-
+        Fridge = parent
         Dim ItemL As New GroceryList With {
             .Name = name,
             .Text = text
@@ -56,8 +56,9 @@ Public Class GroceryListPanel
         ItemL.AddItem(New ItemInfo("Milk", 4, "L"))
         ItemL.AddItem(New ItemInfo("Ground Beef", 2, "Kg"))
 
-        Fridge = parent
+
         LoadList(ItemL)
+        EnableSend()
     End Sub
 
     Public Sub New(parent As SmartFridgeDisplay, list As GroceryList)
@@ -69,7 +70,7 @@ Public Class GroceryListPanel
 
         Fridge = parent
         LoadList(list)
-
+        EnableSend()
     End Sub
 
 
@@ -136,9 +137,10 @@ Public Class GroceryListPanel
     End Sub
 
     Private Sub SendToPhoneButton_Click(sender As Object, e As EventArgs) Handles SendToPhoneButton.Click
-        Dim aJson As New ActionJson
-        aJson.Type = "list"
-        aJson.Action = "update"
+        Dim aJson As New ActionJson With {
+            .Type = "list",
+            .Action = "updatelist"
+        }
         Dim lbTemp As ListBar = UpdatingList.Bar
         UpdatingList.Bar = Nothing
         aJson.List = UpdatingList
@@ -146,9 +148,26 @@ Public Class GroceryListPanel
         UpdatingList.Bar = lbTemp
     End Sub
 
+    Public Sub SendToFridge(item As ItemInfo, All As Boolean)
+        Dim aJson As New ActionJson With {
+            .Type = "list",
+            .Action = "updatefridge"
+        }
+        aJson.Item = item.Clone
+        If Not All Then
+            aJson.Item.Quantity = 1
+        End If
+        Fridge.Send(JsonConvert.SerializeObject(aJson))
+
+
+
+    End Sub
+
     Private Sub EnableSend()
         If Fridge.FridgeOrPhone Then
             SendToPhoneButton.Show()
+        Else
+            SendToPhoneButton.Hide()
         End If
 
     End Sub
