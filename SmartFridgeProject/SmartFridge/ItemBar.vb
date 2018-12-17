@@ -83,11 +83,13 @@
     Private Sub BuyOne_Click(sender As Object, e As EventArgs) Handles BuyOne.Click
         List.SendToFridge(Info, False)
         DownQuantityButton_Click(sender, e)
+        List.ApplyChanges()
     End Sub
 
     Private Sub BuyAll_Click(sender As Object, e As EventArgs) Handles BuyAll.Click
         List.SendToFridge(Info, True)
         DeleteItem()
+        List.ApplyChanges()
 
     End Sub
 End Class

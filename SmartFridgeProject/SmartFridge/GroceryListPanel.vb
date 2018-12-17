@@ -11,6 +11,7 @@ Public Class GroceryListPanel
     Public Fridge As SmartFridgeDisplay
     Dim DetailsShowing As Boolean = True
 
+
     Private Property ContentPanel_FlowPanel As FlowLayoutPanel Implements ContentPanel.FlowPanel
         Get
             Return FlowPanel
@@ -111,6 +112,8 @@ Public Class GroceryListPanel
     Public Sub ListChanged() Implements ContentPanel.ListChanged
         ' TODO handles items added/ removed/ whatever
         ' Enables Apply/Cancel Changes button
+
+
         CancelChanges.Show()
         ApplyChangesButton.Show()
 
