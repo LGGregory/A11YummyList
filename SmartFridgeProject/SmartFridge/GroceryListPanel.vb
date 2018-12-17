@@ -139,8 +139,11 @@ Public Class GroceryListPanel
         Dim aJson As New ActionJson
         aJson.Type = "list"
         aJson.Action = "update"
+        Dim lbTemp As ListBar = UpdatingList.Bar
+        UpdatingList.Bar = Nothing
         aJson.List = UpdatingList
         Fridge.Send(JsonConvert.SerializeObject(aJson))
+        UpdatingList.Bar = lbTemp
     End Sub
 
     Private Sub EnableSend()

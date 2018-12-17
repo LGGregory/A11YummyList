@@ -249,11 +249,11 @@ Public Class SmartFridgeDisplay
         CurrentList = list
         CurrentListPanel.LoadList(list)
         If bar Then
-            If recipes Then
-                TopBar.RecipeMode()
-            Else
-                TopBar.SavedMode()
-            End If
+            'If recipes Then
+            'TopBar.RecipeMode()
+            'Else
+            'TopBar.SavedMode()
+            'End If
             TopBar.Show()
             CurrentListPanel.Location = WiBar
         Else

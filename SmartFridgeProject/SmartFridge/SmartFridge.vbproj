@@ -282,9 +282,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\AddNeeded.png" />
+    <None Include="Resources\AddAll.png" />
     <None Include="Edit.png" />
     <None Include="addItem.png" />
     <None Include="addItemdim.png" />
+    <None Include="Cart.png" />
     <Content Include="Hambuger.png" />
     <None Include="Resources\OpenTriangle.png" />
     <None Include="Resources\CloseTriangle.png" />
